@@ -73,6 +73,6 @@ function handleQueryResponse(response) {
     var val = data.getValue(rows[i], 1);
     var prio = coln < 2 ? data.getValue(rows[i], 2) : 50;
 
-    document.getElementById('viz').innerHTML += "";
+    document.getElementById('viz').innerHTML += item(prio, name);
   }
 }
