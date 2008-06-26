@@ -28,9 +28,9 @@ scrolling="true">
 
 <Content type="html">
 <![CDATA[
-<script type="text/javascript" src="http://www.google.com/jsapi"></script>
-<link rel="stylesheet" href="http://gadget-todo.googlecode.com/svn/trunk/todo.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="http://gadget-todo.googlecode.com/svn/trunk/todo.css" />
 <div id="viz"><img src="http://www.google.com/ig/images/spinner.gif" /></div>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <script type="text/javascript" src="http://gadget-todo.googlecode.com/svn/trunk/todo.js"></script>
 ]]>
 </Content>
