@@ -40,8 +40,8 @@ scrolling="true">
   }
 </style>
 <div id="viz"><img src="http://www.google.com/ig/images/spinner.gif" /></div>
-<script type="text/javascript" src="js/prototype/prototype.js"></script>
-<script type="text/javascript" src="js/bramus/jsProgressBarHandler.js"></script>
+<script type="text/javascript" src="http://gadget-todo.googlecode.com/svn/trunk/js/prototype/prototype.js"></script>
+<script type="text/javascript" src="http://gadget-todo.googlecode.com/svn/trunk/js/bramus/jsProgressBarHandler.js"></script>
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <script type="text/javascript">
   _IG_RegisterOnloadHandler(loadAPI);
@@ -120,10 +120,10 @@ scrolling="true">
   firstManualPB = new JS_BRAMUS.jsProgressBar($('b' + i), val,
   {animate: true, width: 120, height: 12,
   barImage : Array(
-  'http://images/bramus/percentImage_back4.png',
-  'http://images/bramus/percentImage_back3.png',
-  'http://images/bramus/percentImage_back2.png',
-  'http://images/bramus/percentImage_back1.png'
+  'http://gadget-todo.googlecode.com/svn/trunk/images/bramus/percentImage_back4.png',
+  'http://gadget-todo.googlecode.com/svn/trunk/images/bramus/percentImage_back3.png',
+  'http://gadget-todo.googlecode.com/svn/trunk/images/bramus/percentImage_back2.png',
+  'http://gadget-todo.googlecode.com/svn/trunk/images/bramus/percentImage_back1.png'
   )
   });
   }
