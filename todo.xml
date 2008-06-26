@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+<ModulePrefs title="Todo List"
+author="Samuel Charron"
+author_email="scharron@google.com"
+description="Visualize a Todo list"
+thumbnail=""
+screenshot=""
+scrolling="true">
+<Require feature="idi"/>
+<!--<Require feature="locked-domain"/>-->
+<Require feature="settitle"/>
+</ModulePrefs>
+<UserPref name="_table_query_url" display_name="Data source URL" required="true"/>
+<UserPref name="title" display_name="Todo List Title (optional)" required="false"/>
+<UserPref name="groupby" default_value="CN" display_name="Group / Sort by" datatype="enum">
+<EnumValue value="CN" display_value="Category/Name" />
+<EnumValue value="CV" display_value="Category/Value"/>
+<EnumValue value="CP" display_value="Category/Priority"/>
+<EnumValue value="V" display_value="Value"/>
+<EnumValue value="P" display_value="Priority"/>
+</UserPref>
+<UserPref name="_table_query_refresh_interval" datatype="enum" default_value="10" display_name="Refresh Interval" required="true" >
+<EnumValue value="0" display_value="None" />
+<EnumValue value="10" display_value="10 sec." />
+<EnumValue value="60" display_value="1 min." />
+</UserPref>
+
+<Content type="html">
+<![CDATA[
+<style>
+  .ct {
+  overflow:hidden;
+  width: 100%;
+  height: 1.2em;
+  }
+
+  .ct span {
+
+  }
+</style>
+<div id="viz"><img src="http://www.google.com/ig/images/spinner.gif" /></div>
+<script type="text/javascript" src="js/prototype/prototype.js"></script>
+<script type="text/javascript" src="js/bramus/jsProgressBarHandler.js"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+  _IG_RegisterOnloadHandler(loadAPI);
+
+  function loadAPI() {
+  google.load('visualization', '1');
+  google.setOnLoadCallback(init);
+  }
+
+  var prefs = null;
+
+  function init() {
+  prefs = new _IG_Prefs();
+  var title = prefs.getString('title');
+  if (title) {
+  _IG_SetTitle(title);
+  }
+  sendQuery();
+  }
+
+  var gadgetHelper = null;
+  function sendQuery() {
+  gadgetHelper = gadgetHelper || new google.visualization.GadgetHelper();
+  var query = gadgetHelper.createQueryFromPrefs(prefs);
+  query.send(handleQueryResponse);
+  }
+
+  function handleQueryResponse(response) {
+  // Default error message handling
+  if (!gadgetHelper.validateResponse(response))
+  return;
+
+  var groupby = null;
+  switch (prefs.getString("groupby")) {
+  case "CN": groupby=[{column: 3}, {column: 0}]; colhead="<h3>#val#</h3>"; break;
+  case "CV": groupby=[{column: 3}, {column: 1}]; colhead="<h3>#val#</h3>";break;
+  case "CP": groupby=[{column: 3}, {column: 2}]; colhead="<h3>#val#</h3>";break;
+  case "V": groupby=[{column: 1}, {column: 0}]; colhead=""; break;
+  case "P": groupby=[{column: 2, desc: true}, {column: 0}]; colhead=""; break;
+  }
+
+  var data = response.getDataTable();
+  var coln = data.getNumberOfColumns();
+  var rown = data.getNumberOfRows()
+  if (coln < 2 ||
+  groupby[0].column > coln - 1 ||
+  groupby[1].column > coln - 1)
+  {
+  document.getElementById('viz').innerHTML = "<span color='red'><b>Error, Number of column too low or incompatible with the Groupby option</b></span>";
+  return;
+  }
+
+  var master = groupby[0].column;
+  var rows = data.getSortedRows(groupby);
+
+  document.getElementById('viz').innerHTML = "";
+
+  var old_mv = null;
+
+  for (var i = 0; i < rows.length; i++) { // iterate over rows
+  var mv = data.getValue(rows[i], master);
+  if (mv != old_mv) {
+  var ch = colhead;
+  ch = ch.replace("#val#", mv);
+  old_mv = mv;
+  document.getElementById('viz').innerHTML += ch;
+  }
+  var name = data.getValue(rows[i], 0);
+  var val = data.getValue(rows[i], 1);
+  var prio = coln < 2 ? data.getValue(rows[i], 2) : 50;
+  //var pris = (prio * 255.0 / 100.0).toInt().toString(16);
+  //var pric = ((256 - prio) * 255.0 / 100.0).toInt().toString(16);
+
+  //document.getElementById('viz').innerHTML += "<div class='barWrapper'><span id='b" + i + "' class='scrollBar'>[ Loading Progress Bar ]</span>" + name + "</div>";
+  document.getElementById('viz').innerHTML += "<div class='ct'><span id='b" + i + "' class='scrollBar'>[ Loading Progress Bar ]</span>" + name + "</div>";
+  firstManualPB = new JS_BRAMUS.jsProgressBar($('b' + i), val,
+  {animate: true, width: 120, height: 12,
+  barImage : Array(
+  'http://images/bramus/percentImage_back4.png',
+  'http://images/bramus/percentImage_back3.png',
+  'http://images/bramus/percentImage_back2.png',
+  'http://images/bramus/percentImage_back1.png'
+  )
+  });
+  }
+  }
+</script>
+]]>
+</Content>
+</Module>
