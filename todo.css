@@ -1,12 +1,17 @@
 .pbct {
   border: 1px solid #ccc;
   padding: 1px;
+  margin: 1px;
   float: left;
   background: white;
   width: 100%;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
 }
 
 .pb {
   height: 1.2em;
   overflow: hidden;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
 }

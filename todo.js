@@ -23,10 +23,41 @@ function sendQuery() {
   query.send(handleQueryResponse);
 }
 
-function item(prio, text) {
-    var pris = Math.floor((prio * 255.0 / 100.0)).toString(16);
-    var pric = Math.floor(((100 - prio) * 255.0 / 100.0)).toString(16);
-    return "<div class='pbct'><div class='pb' style='width: " + prio + "%; background-color:#" + pris + pric + "00' />" + text + "</div>";
+function col(val, lf) {
+    var dval = val / 100;
+
+    var r = (dval < 0.3) ? 255 : (255 - 100 * (dval - 0.3));
+    var g = 0 + dval * 240;
+    var b = (Math.abs(0.5 - dval) * 0);
+
+
+    if (r < 0) r = 0; if (r > 255) r = 255;
+    if (g < 0) g = 0; if (g > 255) g = 255;
+    if (b < 0) b = 0; if (b > 255) b = 255;
+
+    r = r + (255 - r) * (lf - 1) / lf;
+    g = g + (255 - g) * (lf - 1) / lf;
+    b = b + (255 - b) * (lf - 1) / lf;
+
+    r = Math.floor(r).toString(16);
+    g = Math.floor(g).toString(16);
+    b = Math.floor(b).toString(16);
+
+    if (r.length < 2)
+      r = "0" + r;
+    if (g.length < 2)
+      g = "0" + g;
+    if (b.length < 2)
+      b = "0" + b;
+
+    return "#" + r + g + b;
+}
+
+function item(val, prio, text) {
+  var bgcolor = col(val, 1.6);
+  var color = col(prio, 6);
+
+  return "<div class='pbct' style='background-color:" + color + ";'><div class='pb' style='width: " + val + "%; background-color:" + bgcolor + "'>" + text + "</div></div>";
 }
 
 function handleQueryResponse(response) {
@@ -73,6 +104,6 @@ function handleQueryResponse(response) {
     var val = data.getValue(rows[i], 1);
     var prio = coln < 2 ? data.getValue(rows[i], 2) : 50;
 
-    document.getElementById('viz').innerHTML += item(prio, name);
+    document.getElementById('viz').innerHTML += item(val, name);
   }
 }
