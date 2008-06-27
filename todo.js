@@ -57,7 +57,7 @@ function item(val, prio, text) {
   var bgcolor = col(val, 1.6);
   var color = col(prio, 6);
 
-  return "<div class='pbct' style='background-color:" + color + ";'><div class='pb' style='width: " + val + "%; background-color:" + bgcolor + "'>" + text + "</div></div>";
+  return "<div class='pbct' style='background-color:" + color + ";'>" + text + "<div class='pb' style='width: " + val + "%; background-color:" + bgcolor + "'>" + text + "</div></div>";
 }
 
 function handleQueryResponse(response) {
