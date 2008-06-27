@@ -9,6 +9,7 @@
   -webkit-border-radius: 6px;
   overflow: hidden;
   color: #ccc;
+  height: 1.2em;
 }
 
 #viz .pb {
