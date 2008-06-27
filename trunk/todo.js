@@ -100,7 +100,7 @@ function handleQueryResponse(response) {
       ch = ch.replace("#val#", mv);
       old_mv = mv;
       document.getElementById('viz').innerHTML += ch;
-      document.getElementById('viz').innerHTML += old_mv == "<ul>"
+      document.getElementById('viz').innerHTML += "<ul>"
     }
     var name = data.getValue(rows[i], 0);
     var val = data.getValue(rows[i], 1);
