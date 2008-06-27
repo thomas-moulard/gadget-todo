@@ -108,7 +108,7 @@ function handleQueryResponse(response) {
     var val = data.getValue(rows[i], 1);
     var prio = coln < 2 ? data.getValue(rows[i], 2) : 50;
 
-    buf += "<li>" + item(val, prio, name) + "</li>";
+    buf += "<li>" + item(val, prio, name) + "</li>\n";
   }
   buf += old_mv == null ? "" : "</ul></p>";
   document.getElementById('viz').innerHTML = buf;

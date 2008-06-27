@@ -1,4 +1,4 @@
-.pbct {
+#viz .pbct {
   border: 1px solid #ccc;
   padding: 1px;
   margin: 1px;
@@ -9,7 +9,7 @@
   -webkit-border-radius: 6px;
 }
 
-.pb {
+#viz .pb {
   height: 1.2em;
   overflow: hidden;
   -moz-border-radius: 4px;
