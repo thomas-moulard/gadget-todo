@@ -6,11 +6,12 @@
   width: 80%;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
+  overflow: hidden;
 }
 
 #viz .pb {
   height: 1.2em;
-  overflow: hidden;
+  overflow: visible;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
 }
