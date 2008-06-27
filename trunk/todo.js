@@ -96,20 +96,20 @@ function handleQueryResponse(response) {
   for (var i = 0; i < rows.length; i++) { // iterate over rows
     var mv = data.getValue(rows[i], master);
     if (mv != old_mv) {
-      buf += (old_mv == null ? "" : "</ul></p></br>")
+      buf += (old_mv == null ? "" : "</" + "ul></" + "p></br>")
       var ch = colhead;
       ch = ch.replace("#val#", mv);
       old_mv = mv;
-      buf += "<p>";
+      buf += "<" + "p>";
       buf += ch;
-      buf += "<ul>";
+      buf += "<" + "ul>";
     }
     var name = data.getValue(rows[i], 0);
     var val = data.getValue(rows[i], 1);
     var prio = coln < 2 ? data.getValue(rows[i], 2) : 50;
 
-    buf += "<li>" + item(val, prio, name) + "</li>\n";
+    buf += "<" + "li>" + item(val, prio, name) + "</" + "li>";
   }
-  buf += old_mv == null ? "" : "</ul></p>";
+  buf += old_mv == null ? "" : "</" + "ul></" + "p>";
   document.getElementById('viz').innerHTML = buf;
 }
