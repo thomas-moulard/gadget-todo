@@ -95,15 +95,18 @@ function handleQueryResponse(response) {
   for (var i = 0; i < rows.length; i++) { // iterate over rows
     var mv = data.getValue(rows[i], master);
     if (mv != old_mv) {
+      document.getElementById('viz').innerHTML += old_mv == null ? "" : "</ul>"
       var ch = colhead;
       ch = ch.replace("#val#", mv);
       old_mv = mv;
       document.getElementById('viz').innerHTML += ch;
+      document.getElementById('viz').innerHTML += old_mv == "<ul>"
     }
     var name = data.getValue(rows[i], 0);
     var val = data.getValue(rows[i], 1);
     var prio = coln < 2 ? data.getValue(rows[i], 2) : 50;
 
-    document.getElementById('viz').innerHTML += item(val, prio, name) + "\n";
+    document.getElementById('viz').innerHTML += "<li>" + item(val, prio, name) + "</li>";
   }
+  document.getElementById('viz').innerHTML += old_mv == null ? "" : "</ul>"
 }
