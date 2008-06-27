@@ -111,6 +111,5 @@ function handleQueryResponse(response) {
     buf += "<li>" + item(val, prio, name) + "</li>";
   }
   buf += old_mv == null ? "" : "</ul></p>";
-  window.alert(buf);
   document.getElementById('viz').innerHTML = buf;
 }
