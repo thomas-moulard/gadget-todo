@@ -95,7 +95,7 @@ function handleQueryResponse(response) {
   for (var i = 0; i < rows.length; i++) { // iterate over rows
     var mv = data.getValue(rows[i], master);
     if (mv != old_mv) {
-      document.getElementById('viz').innerHTML += old_mv == null ? "" : "</ul>"
+      document.getElementById('viz').innerHTML += (old_mv == null ? "" : "</ul><br />")
       var ch = colhead;
       ch = ch.replace("#val#", mv);
       old_mv = mv;
