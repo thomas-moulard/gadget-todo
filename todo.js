@@ -96,12 +96,13 @@ function handleQueryResponse(response) {
   for (var i = 0; i < rows.length; i++) { // iterate over rows
     var mv = data.getValue(rows[i], master);
     if (mv != old_mv) {
-      buf += (old_mv == null ? "" : "</ul></br>")
+      buf += (old_mv == null ? "" : "</ul></p></br>")
       var ch = colhead;
       ch = ch.replace("#val#", mv);
       old_mv = mv;
+      buf += "<p>";
       buf += ch;
-      buf += "<ul>"
+      buf += "<ul>";
     }
     var name = data.getValue(rows[i], 0);
     var val = data.getValue(rows[i], 1);
@@ -109,6 +110,6 @@ function handleQueryResponse(response) {
 
     buf += "<li>" + item(val, prio, name) + "</li>";
   }
-  buf += old_mv == null ? "" : "</ul>";
+  buf += old_mv == null ? "" : "</ul></p>";
   document.getElementById('viz').innerHTML = buf;
 }
