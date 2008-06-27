@@ -92,21 +92,24 @@ function handleQueryResponse(response) {
 
   var old_mv = null;
 
+  var buf = "";
   for (var i = 0; i < rows.length; i++) { // iterate over rows
     var mv = data.getValue(rows[i], master);
     if (mv != old_mv) {
-      document.getElementById('viz').innerHTML += (old_mv == null ? "No ul to close" : "</ul></br>")
+      buf += (old_mv == null ? "" : "</ul></br>")
       var ch = colhead;
       ch = ch.replace("#val#", mv);
       old_mv = mv;
-      document.getElementById('viz').innerHTML += ch;
-      document.getElementById('viz').innerHTML += "<ul>"
+      buf += ch;
+      buf += "<ul>"
     }
     var name = data.getValue(rows[i], 0);
     var val = data.getValue(rows[i], 1);
     var prio = coln < 2 ? data.getValue(rows[i], 2) : 50;
 
-    document.getElementById('viz').innerHTML += "<li>" + item(val, prio, name) + "</li>";
+    buf += "<li>" + item(val, prio, name) + "</li>";
   }
-  document.getElementById('viz').innerHTML += old_mv == null ? "" : "</ul>"
+  buf += old_mv == null ? "" : "</ul>";
+  document.write(buf);
+  document.getElementById('viz').innerHTML = buf;
 }
