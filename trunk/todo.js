@@ -58,7 +58,7 @@ function gadgetMain(data) {
         groupby[1].column > coln - 1)
     {
       var span = document.createElement("span");
-      span.text = "Error, Number of column too low or incompatible with the Groupby option.";
+      span.textContent = "Error, Number of column too low or incompatible with the Groupby option.";
       span.className ="gadgetSettingsError";
       document.getElementById('viz').appendChild(span);
       return;
