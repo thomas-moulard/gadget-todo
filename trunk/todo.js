@@ -143,7 +143,8 @@ function itemize(obj, elt) {
 
 function view(model) {
   var root = document.getElementById("viz");
-  root.clear();
+  for (var i = 0; i < root.childNodes.length; ++i)
+    root.removeChild(root.childNodes[i]);
 
   var current_element = root;
   for (var i = 0; i < model.data.length; ++i) {
