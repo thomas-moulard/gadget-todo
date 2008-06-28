@@ -51,6 +51,10 @@ function gadgetMain(data) {
     case "P": groupby=[{column: 2, desc: true}, {column: 0}]; bgroupby=false; break;
   }
 
+  var root = document.getElementById("viz");
+  for (var i = 0; i < root.childNodes.length; ++i)
+    root.removeChild(root.childNodes[i]);
+
   var coln = data.getNumberOfColumns();
   var rown = data.getNumberOfRows()
     if (coln < 2 ||
