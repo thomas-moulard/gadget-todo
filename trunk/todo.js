@@ -81,6 +81,8 @@ function gadgetMain(data) {
     var prio = coln < 2 ? 50 : data.getValue(rows[i], 2);
     model.data[model.data.length - 1].elts.push({name: name, val: val, prio: prio});
   }
+
+  view(model);
 }
 
 
