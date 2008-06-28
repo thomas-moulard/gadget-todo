@@ -44,11 +44,11 @@ function gadgetMain(data) {
 
   var groupby = null;
   switch (prefs.getString("groupby")) {
-    case "CN": groupby=[{column: 3}, {column: 0}]; groupby=true; break;
-    case "CV": groupby=[{column: 3}, {column: 1}]; groupby=true;break;
-    case "CP": groupby=[{column: 3}, {column: 2}]; groupby=true;break;
-    case "V": groupby=[{column: 1}, {column: 0}]; groupby=false; break;
-    case "P": groupby=[{column: 2, desc: true}, {column: 0}]; groupby=false; break;
+    case "CN": groupby=[{column: 3}, {column: 0}]; bgroupby=true; break;
+    case "CV": groupby=[{column: 3}, {column: 1}]; bgroupby=true;break;
+    case "CP": groupby=[{column: 3}, {column: 2}]; bgroupby=true;break;
+    case "V": groupby=[{column: 1}, {column: 0}]; bgroupby=false; break;
+    case "P": groupby=[{column: 2, desc: true}, {column: 0}]; bgroupby=false; break;
   }
 
   var coln = data.getNumberOfColumns();
@@ -66,7 +66,7 @@ function gadgetMain(data) {
 
   document.getElementById('viz').innerHTML = "";
 
-  var model = {groupby: groupby, data: array()};
+  var model = {groupby: bgroupby, data: array()};
   if (groupby)
     model.data.push({elts: array()});
 
