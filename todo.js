@@ -23,12 +23,6 @@ function sendQuery() {
   query.send(handleQueryResponse);
 }
 
-function update(obj, val, max) {
-  document.getElementById(obj).style.width = val + "%";
-  if (val < max)
-    setTimeout("update(" + obj + ", " + (val + 1) + ", " + max + ");", 200);
-}
-
 function col(val, lf) {
     var dval = val / 100;
 
@@ -123,7 +117,4 @@ function handleQueryResponse(response) {
   }
   buf += old_mv == null ? "" : "</ul></p>";
   document.getElementById('viz').innerHTML = buf;
-  for (var i = 0; i < bid; ++i) {
-    setTimeout("update('b" + i + "', 0, " + val + ");", 200);
-  }
 }
