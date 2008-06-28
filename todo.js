@@ -93,11 +93,6 @@ function gadgetMain(data) {
 }
 
 
-
-
-
-
-
 function col(val, lf) {
     var dval = val / 100;
 
@@ -128,6 +123,12 @@ function col(val, lf) {
     return "#" + r + g + b;
 }
 
+function update(obj, val, max) {
+  if (val < max)
+    window.setTimeout(update, 50, obj, val + 3, max);
+  obj.style.backgroundColor = col(val, 1);
+  obj.style.width = val + "%";
+}
 
 var bid = 0;
 function itemize(obj, elt) {
@@ -140,9 +141,28 @@ function itemize(obj, elt) {
   text = text.replace(/ /g, "&nbsp;"); // For nice black/grey text.
   text = "&nbsp;" + text;
 
-  var txt = "<div class='barcontainer' style='background-color:" + color + ";'><div class='barhack'>" + text + "<div class='bar' id='b" + bid + "' style='width: " + val + "%; background-color:" + bgcolor + "'>" + text + "</div></div></div>";
+  var container = document.createElement("div");
+  container.className = "barcontainer";
+  container.style.backgroundColor = color;
+
+  var hack = document.createElement("div");
+  hack.className = "barhack";
+  hack.innerHTML = text;
+
+  var bar = document.createElement("div");
+  bar.className = "bar";
+  bar.id = "b" + bid;
+  bar.style.backgroundColor = bgcolor;
+  bar.style.width = val + "%";
+  bar.innerHTML = text;
+  window.setTimeout(update, 50, bar, 0, val);
+
+  container.appendChild(hack);
+  hack.appendChild(bar);
+
+  obj.appendChild(container);
+
   bid = bid + 1;
-  obj.innerHTML = txt;
 }
 
 
