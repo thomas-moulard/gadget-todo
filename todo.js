@@ -182,7 +182,7 @@ function legend(obj) {
   var table = document.createElement("table");
   var tr = document.createElement("tr");
   table.appendChild(tr);
-  for (int i = 0; i < 5; ++i) {
+  for (var i = 0; i < 5; ++i) {
     var td = document.createElement("td");
     tr.appendChild(td);
     td.textContent = (i * 20) + "%";
