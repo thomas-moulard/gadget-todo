@@ -54,7 +54,7 @@ function col(val, lf) {
 }
 
 function item(val, prio, text) {
-  var bgcolor = col(val, 1.6);
+  var bgcolor = col(val, 1);
   var color = col(prio, 6);
 
   return "<div class='pbct' style='background-color:" + color + ";'>" + text + "<div class='pb' style='width: " + val + "%; background-color:" + bgcolor + "'>" + text + "</div></div>";
