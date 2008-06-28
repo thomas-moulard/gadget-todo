@@ -23,6 +23,12 @@ function sendQuery() {
   query.send(handleQueryResponse);
 }
 
+function update(obj, val, max) {
+  document.getElementById(obj).style.width = val + "%";
+  if (val < max)
+    setTimeout("update(" + obj + ", " + (val + 1) + ", " + max + ");", 200);
+}
+
 function col(val, lf) {
     var dval = val / 100;
 
@@ -53,17 +59,22 @@ function col(val, lf) {
     return "#" + r + g + b;
 }
 
-function item(val, prio, text) {
+
+var bid = 0;
+function item(val, prio, text, animrate) {
   var bgcolor = col(val, 1);
   var color = col(prio, 6);
 
-  return "<div class='pbct' style='background-color:" + color + ";'>" + text + "<div class='pb' style='width: " + val + "%; background-color:" + bgcolor + "'>" + text + "</div></div>";
+  var txt = "<div class='barcontainer' style='background-color:" + color + ";'><div class='barhack'>" + text + "<div class='bar' id='b" + bid + "' style='width: " + val + "%; background-color:" + bgcolor + "'>" + text + "</div></div></div>";
+  bid = bid + 1;
+  return txt;
 }
 
 function handleQueryResponse(response) {
   // Default error message handling
   if (!gadgetHelper.validateResponse(response))
     return;
+  bid = 0;
 
   var groupby = null;
   switch (prefs.getString("groupby")) {
@@ -112,4 +123,7 @@ function handleQueryResponse(response) {
   }
   buf += old_mv == null ? "" : "</ul></p>";
   document.getElementById('viz').innerHTML = buf;
+  for (var i = 0; i < bid; ++i) {
+    setTimeout("update('b" + i + "', 0, " + val + ");", 200);
+  }
 }
