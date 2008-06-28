@@ -205,8 +205,14 @@ function view(model) {
     root.appendChild(p);
     if (model.groupby) {
       var h3 = document.createElement("h3");
-      model.data[i].text = "(" + model.data[i].val + "%) " + model.data[i].text;
-      itemize(h3, model.data[i]);
+      h3.innerHTML = model.data[i].text;
+
+      var div = document.createElement("div");
+      div.className = "summary";
+      model.data[i].text = "(" + model.data[i].val + "%) ";
+      itemize(div, model.data[i]);
+
+      p.appendChild(div);
       p.appendChild(h3);
     }
     var ul = document.createElement("ul");
