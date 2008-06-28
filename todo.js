@@ -58,6 +58,7 @@ var bid = 0;
 function item(val, prio, text, animrate) {
   var bgcolor = col(val, 1);
   var color = col(prio, 6);
+  text = text.replace(" ", "&nbsp;");
 
   var txt = "<div class='barcontainer' style='background-color:" + color + ";'><div class='barhack'>" + text + "<div class='bar' id='b" + bid + "' style='width: " + val + "%; background-color:" + bgcolor + "'>" + text + "</div></div></div>";
   bid = bid + 1;
