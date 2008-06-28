@@ -3,14 +3,13 @@
 }
 
 #viz .barcontainer {
-  border: 1px solid #ccc;
-  padding: 1px;
+  border: 1px solid #DDDDDD;
   margin: 1px;
   background: white;
   width: 80%;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
-  color: #999;
+  color: #333333;
   height: 1.2em;
   overflow: hidden;
 }
