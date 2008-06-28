@@ -66,9 +66,9 @@ function gadgetMain(data) {
 
   document.getElementById('viz').innerHTML = "";
 
-  var model = {groupby: bgroupby, data: array()};
+  var model = {groupby: bgroupby, data: []};
   if (groupby)
-    model.data.push({elts: array()});
+    model.data.push({elts: []});
 
   var old_mv = null;
 
