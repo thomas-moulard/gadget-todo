@@ -142,6 +142,7 @@ function itemize(obj, elt) {
 
 
 function view(model) {
+  root.clear();
   var root = document.getElementById("viz");
 
   var current_element = root;
