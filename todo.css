@@ -5,13 +5,13 @@
 }
 
 #viz .barcontainer {
-  border: 1px solid #DDDDDD;
+  border: 1px solid #DDD;
   margin: 1px;
   background: white;
   width: 80%;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
-  color: #333333;
+  color: #666666;
   height: 1.2em;
   overflow: hidden;
 }
