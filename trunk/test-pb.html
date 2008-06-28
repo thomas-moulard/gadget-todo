@@ -7,16 +7,24 @@
     <div style="width: 400px" id="viz">
     <script>
       view(
-      {groupby: false,
+      {groupby: true,
         data:
         [
-        {elts:
+        {
+          name: "Elt 1",
+          elts:
           [
             {name: "Some really really really long text", val: 0, prio: 100},
             {name: "Some really really really long text", val: 10, prio: 80},
             {name: "Some really really really long text", val: 20, prio: 60},
             {name: "Some really really really long text", val: 30, prio: 40},
             {name: "Some really really really long text", val: 40, prio: 20},
+          ]
+        },
+        {
+          name: "Elt 2",
+          elts:
+          [
             {name: "Some really really really long text", val: 50, prio: 00},
             {name: "Some really really really long text", val: 60, prio: 10},
             {name: "Some really really really long text", val: 70, prio: 30},
