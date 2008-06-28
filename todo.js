@@ -198,6 +198,13 @@ function view(model) {
   for (var i = 0; i < root.childNodes.length; ++i)
     root.removeChild(root.childNodes[i]);
 
+  var collapse = document.createElement("div");
+  var expand = document.createElement("div");
+  collapse.textContent = "Collapse All";
+  expand.textContent = "Expand All";
+  root.appendChild(collapse);
+  root.appendChild(expand);
+
   for (var i = 0; i < model.data.length; ++i) {
     if (model.data[i].elts.length == 0)
       continue;
@@ -219,11 +226,21 @@ function view(model) {
          function(h3_, div_, ul_) { return function() {
            h3_.className = "show"; div_.className = "hid"; ul_.className = "show";
          } } (h3, div, ul);
+      if (expand.addEventListener){
+        expand.addEventListener('click', div.onclick, false);
+      } else if (expand.attachEvent) {
+        expand.attachEvent('onclick', div.onclick);
+      }
 
       h3.onclick =
          function(h3_, div_, ul_) { return function() {
            h3_.className = "hid"; div_.className = "show"; ul_.className = "hid";
          } } (h3, div, ul);
+      if (collapse.addEventListener){
+        collapse.addEventListener('click', h3.onclick, false);
+      } else if (collapse.attachEvent) {
+        collapse.attachEvent('onclick', h3.onclick);
+      }
 
       p.appendChild(div);
       p.appendChild(h3);
