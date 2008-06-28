@@ -93,7 +93,7 @@ function gadgetMain(data) {
         groupby[0].column > coln - 1 ||
         groupby[1].column > coln - 1)
     {
-      document.getElementById('viz').innerHTML = "<span class='error'>Error, Number of column too low or incompatible with the Groupby option.</span>";
+      document.getElementById('viz').innerHTML = "<span class='gadgetSettingsError'>Error, Number of column too low or incompatible with the Groupby option.</span>";
       return;
     }
 
