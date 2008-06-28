@@ -96,8 +96,8 @@ function gadgetMain(data) {
         model.data[i].val += model.data[i].elts[j].val;
         model.data[i].prio += model.data[i].elts[j].prio;
       }
-      model.data[i].val /= model.data[i].elts.length;
-      model.data[i].prio /= model.data[i].elts.length;
+      model.data[i].val = Math.round(model.data[i].val / model.data[i].elts.length);
+      model.data[i].prio = Mat.round(model.data[i].prio / model.data[i].elts.length);
     }
   }
 
