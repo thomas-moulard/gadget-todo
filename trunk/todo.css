@@ -1,5 +1,4 @@
-#viz .pbct {
-  position: relative;
+#viz .barcontainer {
   border: 1px solid #ccc;
   padding: 1px;
   margin: 1px;
@@ -7,18 +6,22 @@
   width: 80%;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
-  overflow: hidden;
   color: #ccc;
   height: 1.2em;
 }
 
-#viz .pb {
+#viz .bar {
   position: absolute;
-  left: 1;
-  top: 1;
+  left: 0;
+  top: 0;
   height: 1.2em;
   overflow: hidden;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   color: black;
+}
+
+#viz .barhack {
+  position: relative;
+
 }
