@@ -32,10 +32,11 @@
   position: relative;
 }
 
-#viz {
-  padding: 4px;
-}
-
 #viz ul {
   list-style-type: none;
+}
+
+#viz .summary {
+  width: 4em;
+  float: left;
 }
