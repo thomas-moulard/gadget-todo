@@ -10,6 +10,7 @@ scrolling="true">
 <Require feature="idi"/>
 <!--<Require feature="locked-domain"/>-->
 <Require feature="settitle"/>
+<Require feature="MiniMessage"/>
 </ModulePrefs>
 <UserPref name="_table_query_url" display_name="Data source URL" required="true"/>
 <UserPref name="title" display_name="Todo List Title (optional)" required="false"/>
