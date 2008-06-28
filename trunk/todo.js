@@ -92,13 +92,13 @@ function gadgetMain(data) {
     for (var i = 0; i < model.data.length; ++i) {
       if (model.data[i].elts.length == 0)
         continue;
+      for (var j = 0; j < model.data[i].elts.length; ++j) {
+        model.data[i].val += model.data[i].elts[j].val;
+        model.data[i].prio += model.data[i].elts[j].prio;
+      }
+      model.data[i].val /= model.data[i].elts.length;
+      model.data[i].prio /= model.data[i].elts.length;
     }
-    for (var j = 0; j < model.data[i].elts.length; ++j) {
-      model.data[i].val += model.data[i].elts[j].val;
-      model.data[i].prio += model.data[i].elts[j].prio;
-    }
-    model.data[i].val /= model.data[i].elts.length;
-    model.data[i].prio /= model.data[i].elts.length;
   }
 
   view(model);
