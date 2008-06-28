@@ -27,7 +27,8 @@ function handleQueryResponse(response) {
   // Default error message handling
   if (!gadgetHelper.validateResponse(response))
     return;
-  gadgetMain();
+  var data = response.getDataTable();
+  gadgetMain(data);
 }
 
 function col(val, lf) {
@@ -73,7 +74,7 @@ function item(val, prio, text, animrate) {
 }
 
 
-function gadgetMain() {
+function gadgetMain(data) {
   bid = 0;
 
   var groupby = null;
@@ -85,7 +86,6 @@ function gadgetMain() {
     case "P": groupby=[{column: 2, desc: true}, {column: 0}]; colhead=""; break;
   }
 
-  var data = response.getDataTable();
   var coln = data.getNumberOfColumns();
   var rown = data.getNumberOfRows()
     if (coln < 2 ||
