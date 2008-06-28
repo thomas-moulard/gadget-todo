@@ -1,3 +1,5 @@
+//////////////// Beginning of Google Gadget Code ///////////////////////////////
+
 _IG_RegisterOnloadHandler(loadAPI);
 
 function loadAPI() {
@@ -31,6 +33,65 @@ function handleQueryResponse(response) {
   gadgetMain(data);
 }
 
+//////////////// End of Google Gadget Code ////////////////////////////////////
+
+
+
+//////////////// Beginning of crappy code /////////////////////////////////////
+
+function gadgetMain(data) {
+  bid = 0;
+
+  var groupby = null;
+  switch (prefs.getString("groupby")) {
+    case "CN": groupby=[{column: 3}, {column: 0}]; groupby=true; break;
+    case "CV": groupby=[{column: 3}, {column: 1}]; groupby=true;break;
+    case "CP": groupby=[{column: 3}, {column: 2}]; groupby=true;break;
+    case "V": groupby=[{column: 1}, {column: 0}]; groupby=false; break;
+    case "P": groupby=[{column: 2, desc: true}, {column: 0}]; groupby=false; break;
+  }
+
+  var coln = data.getNumberOfColumns();
+  var rown = data.getNumberOfRows()
+    if (coln < 2 ||
+        groupby[0].column > coln - 1 ||
+        groupby[1].column > coln - 1)
+    {
+      document.getElementById('viz').innerHTML = "<span class='gadgetSettingsError'>Error, Number of column too low or incompatible with the Groupby option.</span>";
+      return;
+    }
+
+  var master = groupby[0].column;
+  var rows = data.getSortedRows(groupby);
+
+  document.getElementById('viz').innerHTML = "";
+
+  var model = {groupby: groupby, data: array()};
+  if (groupby)
+    model.data.push({elts: array()});
+
+  var old_mv = null;
+
+  var buf = "";
+  for (var i = 0; i < rows.length; i++) { // iterate over rows
+    var mv = data.getValue(rows[i], master);
+    if (mv != old_mv) {
+      model.data.push({name: mv, elts: array()});
+      old_mv = mv;
+    }
+    var name = data.getValue(rows[i], 0);
+    var val = data.getValue(rows[i], 1);
+    var prio = coln < 2 ? 50 : data.getValue(rows[i], 2);
+    model.data[model.data.length - 1].elts.push({name: name, val: val, prio: prio});
+  }
+}
+
+
+
+
+
+
+
 function col(val, lf) {
     var dval = val / 100;
 
@@ -63,7 +124,11 @@ function col(val, lf) {
 
 
 var bid = 0;
-function item(val, prio, text, animrate) {
+function itemize(obj, elt) {
+  var prio = elt.prio;
+  var val = elt.val;
+  var text = elt.name;
+
   var bgcolor = col(val, 1);
   var color = col(prio, 6);
   text = text.replace(/ /g, "&nbsp;"); // For nice black/grey text.
@@ -71,57 +136,32 @@ function item(val, prio, text, animrate) {
 
   var txt = "<div class='barcontainer' style='background-color:" + color + ";'><div class='barhack'>" + text + "<div class='bar' id='b" + bid + "' style='width: " + val + "%; background-color:" + bgcolor + "'>" + text + "</div></div></div>";
   bid = bid + 1;
-  return txt;
+  obj.innerHTML = txt;
 }
 
 
-function gadgetMain(data) {
-  bid = 0;
 
-  var groupby = null;
-  switch (prefs.getString("groupby")) {
-    case "CN": groupby=[{column: 3}, {column: 0}]; colhead="<h3>#val#</h3>"; break;
-    case "CV": groupby=[{column: 3}, {column: 1}]; colhead="<h3>#val#</h3>";break;
-    case "CP": groupby=[{column: 3}, {column: 2}]; colhead="<h3>#val#</h3>";break;
-    case "V": groupby=[{column: 1}, {column: 0}]; colhead=""; break;
-    case "P": groupby=[{column: 2, desc: true}, {column: 0}]; colhead=""; break;
-  }
 
-  var coln = data.getNumberOfColumns();
-  var rown = data.getNumberOfRows()
-    if (coln < 2 ||
-        groupby[0].column > coln - 1 ||
-        groupby[1].column > coln - 1)
-    {
-      document.getElementById('viz').innerHTML = "<span class='gadgetSettingsError'>Error, Number of column too low or incompatible with the Groupby option.</span>";
-      return;
+function view(model) {
+  var root = document.getElementById("viz");
+
+  var current_element = root;
+  for (var i = 0; i < model.data.length; ++i) {
+    if (model.data[i].elts.length == 0)
+      continue;
+    var p = document.createElement("p");
+    root.appendChild(p);
+    if (model.groupby) {
+      var h3 = document.createElement("h3");
+      h3.innerHTML=model.data[i].name;
+      p.appendChild(h3);
     }
-
-  var master = groupby[0].column;
-  var rows = data.getSortedRows(groupby);
-
-  document.getElementById('viz').innerHTML = "";
-
-  var old_mv = null;
-
-  var buf = "";
-  for (var i = 0; i < rows.length; i++) { // iterate over rows
-    var mv = data.getValue(rows[i], master);
-    if (mv != old_mv) {
-      buf += (old_mv == null ? "" : "</ul></p></br>")
-      var ch = colhead;
-      ch = ch.replace("#val#", mv);
-      old_mv = mv;
-      buf += "<p>";
-      buf += ch;
-      buf += "<ul>";
+    var ul = document.createElement("ul");
+    p.appendChild(ul);
+    for (var j = 0; j < model.data[i].elts.length; ++j) {
+      var li = document.createElement("li");
+      ul.appendChild(li);
+      itemize(li, model.data[i].elts[j]);
     }
-    var name = data.getValue(rows[i], 0);
-    var val = data.getValue(rows[i], 1);
-    var prio = coln < 2 ? 50 : data.getValue(rows[i], 2);
-
-    buf += "<li>" + item(val, prio, name) + "</li>";
   }
-  buf += old_mv == null ? "" : "</ul></p>";
-  document.getElementById('viz').innerHTML = buf;
 }
