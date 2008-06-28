@@ -6,7 +6,7 @@
   width: 80%;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
-  color: #ccc;
+  color: #999;
   height: 1.2em;
   overflow: hidden;
 }
@@ -24,5 +24,12 @@
 
 #viz .barhack {
   position: relative;
+}
 
+#viz {
+  padding: 4px;
+}
+
+#viz ul {
+  list-style-type: none;
 }
