@@ -8,6 +8,7 @@
   -webkit-border-radius: 6px;
   color: #ccc;
   height: 1.2em;
+  overflow: hidden;
 }
 
 #viz .bar {
