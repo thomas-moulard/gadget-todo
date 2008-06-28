@@ -126,6 +126,8 @@ function col(val, lf) {
 function update(obj, val, max) {
   if (val < max)
     window.setTimeout(update, 50, obj, val + 3, max);
+  if (val > 100)
+    val = 100;
   obj.style.backgroundColor = col(val, 1);
   obj.style.width = val + "%";
 }
