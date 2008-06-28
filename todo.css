@@ -1,3 +1,7 @@
+#viz {
+  padding: 0.1em 0.1em 1em 1em;
+}
+
 #viz .barcontainer {
   border: 1px solid #ccc;
   padding: 1px;
