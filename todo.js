@@ -40,8 +40,6 @@ function handleQueryResponse(response) {
 //////////////// Beginning of crappy code /////////////////////////////////////
 
 function gadgetMain(data) {
-  bid = 0;
-
   var groupby = null;
   switch (prefs.getString("groupby")) {
     case "CN": groupby=[{column: 3}, {column: 0}]; bgroupby=true; break;
@@ -80,13 +78,27 @@ function gadgetMain(data) {
   for (var i = 0; i < rows.length; i++) { // iterate over rows
     var mv = data.getValue(rows[i], master);
     if (mv != old_mv) {
-      model.data.push({name: mv, elts: []});
+      model.data.push({text: mv, elts: [], val: 0, prio: 0});
       old_mv = mv;
     }
-    var name = data.getValue(rows[i], 0);
+    var text = data.getValue(rows[i], 0);
     var val = data.getValue(rows[i], 1);
     var prio = coln < 2 ? 50 : data.getValue(rows[i], 2);
-    model.data[model.data.length - 1].elts.push({name: name, val: val, prio: prio});
+    model.data[model.data.length - 1].elts.push({text: text, val: val, prio: prio});
+  }
+
+  // Compute the mean
+  if (model.groupby) {
+    for (var i = 0; i < model.data.length; ++i) {
+      if (model.data[i].elts.length == 0)
+        continue;
+    }
+    for (var j = 0; j < model.data[i].elts.length; ++j) {
+      model.data[i].val += model.data[i].elts[j].val;
+      model.data[i].prio += model.data[i].elts[j].prio;
+    }
+    model.data[i].val /= model.data[i].elts.length;
+    model.data[i].prio /= model.data[i].elts.length;
   }
 
   view(model);
@@ -132,11 +144,10 @@ function update(obj, val, max) {
   obj.style.width = val + "%";
 }
 
-var bid = 0;
 function itemize(obj, elt) {
   var prio = elt.prio;
   var val = elt.val;
-  var text = elt.name;
+  var text = elt.text;
 
   var bgcolor = col(val, 1);
   var color = col(prio, 6);
@@ -153,7 +164,6 @@ function itemize(obj, elt) {
 
   var bar = document.createElement("div");
   bar.className = "bar";
-  bar.id = "b" + bid;
   bar.style.backgroundColor = bgcolor;
   bar.style.width = val + "%";
   bar.innerHTML = text;
@@ -163,8 +173,6 @@ function itemize(obj, elt) {
   hack.appendChild(bar);
 
   obj.appendChild(container);
-
-  bid = bid + 1;
 }
 
 
@@ -175,7 +183,6 @@ function view(model) {
   for (var i = 0; i < root.childNodes.length; ++i)
     root.removeChild(root.childNodes[i]);
 
-  var current_element = root;
   for (var i = 0; i < model.data.length; ++i) {
     if (model.data[i].elts.length == 0)
       continue;
@@ -183,7 +190,8 @@ function view(model) {
     root.appendChild(p);
     if (model.groupby) {
       var h3 = document.createElement("h3");
-      h3.innerHTML=model.data[i].name;
+      model.data[i].text = "(" + model.data[i].val + "%) " + model.data[i].text;
+      itemize(h3, model.data[i]);
       p.appendChild(h3);
     }
     var ul = document.createElement("ul");
@@ -191,6 +199,7 @@ function view(model) {
     for (var j = 0; j < model.data[i].elts.length; ++j) {
       var li = document.createElement("li");
       ul.appendChild(li);
+      model.data[i].elts[j].text = "(" + model.data[i].elts[j].val + "%) " + model.data[i].elts[j].text;
       itemize(li, model.data[i].elts[j]);
     }
   }
