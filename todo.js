@@ -68,7 +68,7 @@ function item(val, prio, text, animrate) {
   var color = col(prio, 6);
   text = text.replace(/ /g, "&nbsp;"); // For nice black/grey text.
 
-  var txt = "<div class='barcontainer' style='background-color:" + color + ";'><div class='barhack'>" + text + "<div class='bar' id='b" + bid + "' style='width: " + val + "%; background-color:" + bgcolor + "'>" + text + "</div></div></div>";
+  var txt = "<div class='barcontainer' style='background-color:" + color + ";'><div class='barhack'>&nbsp;" + text + "<div class='bar' id='b" + bid + "' style='width: " + val + "%; background-color:" + bgcolor + "'>&nbsp;" + text + "</div></div></div>";
   bid = bid + 1;
   return txt;
 }
@@ -92,7 +92,7 @@ function gadgetMain(data) {
         groupby[0].column > coln - 1 ||
         groupby[1].column > coln - 1)
     {
-      document.getElementById('viz').innerHTML = "<span color='red'><b>Error, Number of column too low or incompatible with the Groupby option</b></span>";
+      document.getElementById('viz').innerHTML = "<span class='error'>Error, Number of column too low or incompatible with the Groupby option.</span>";
       return;
     }
 
