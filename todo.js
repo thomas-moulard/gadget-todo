@@ -64,15 +64,12 @@ function gadgetMain(data) {
   var master = groupby[0].column;
   var rows = data.getSortedRows(groupby);
 
-  document.getElementById('viz').innerHTML = "";
-
   var model = {groupby: bgroupby, data: []};
-  if (groupby)
+  if (bgroupby)
     model.data.push({elts: []});
 
   var old_mv = null;
 
-  var buf = "";
   for (var i = 0; i < rows.length; i++) { // iterate over rows
     var mv = data.getValue(rows[i], master);
     if (mv != old_mv) {
