@@ -67,8 +67,9 @@ function item(val, prio, text, animrate) {
   var bgcolor = col(val, 1);
   var color = col(prio, 6);
   text = text.replace(/ /g, "&nbsp;"); // For nice black/grey text.
+  text = "&nbsp;" + text;
 
-  var txt = "<div class='barcontainer' style='background-color:" + color + ";'><div class='barhack'>&nbsp;" + text + "<div class='bar' id='b" + bid + "' style='width: " + val + "%; background-color:" + bgcolor + "'>&nbsp;" + text + "</div></div></div>";
+  var txt = "<div class='barcontainer' style='background-color:" + color + ";'><div class='barhack'>" + text + "<div class='bar' id='b" + bid + "' style='width: " + val + "%; background-color:" + bgcolor + "'>" + text + "</div></div></div>";
   bid = bid + 1;
   return txt;
 }
