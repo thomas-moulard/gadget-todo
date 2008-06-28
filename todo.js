@@ -76,7 +76,7 @@ function gadgetMain(data) {
   for (var i = 0; i < rows.length; i++) { // iterate over rows
     var mv = data.getValue(rows[i], master);
     if (mv != old_mv) {
-      model.data.push({name: mv, elts: array()});
+      model.data.push({name: mv, elts: []});
       old_mv = mv;
     }
     var name = data.getValue(rows[i], 0);
