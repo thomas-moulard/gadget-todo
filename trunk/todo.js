@@ -57,7 +57,8 @@ function gadgetMain(data) {
         groupby[0].column > coln - 1 ||
         groupby[1].column > coln - 1)
     {
-      gadgets.createTimerMessage("Error, Number of column too low or incompatible with the Groupby option.", 1000);
+      mm = new _IG_MiniMessage();
+      mm.createTimerMessage("Error, Number of column too low or incompatible with the Groupby option.", 1000);
       document.getElementById('viz').appendChild(gadgets);
       //document.getElementById('viz').innerHTML = "<span class='gadgetSettingsError'>Error, Number of column too low or incompatible with the Groupby option.</span>";
       return;
