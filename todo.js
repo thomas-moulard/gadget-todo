@@ -112,7 +112,7 @@ function handleQueryResponse(response) {
     }
     var name = data.getValue(rows[i], 0);
     var val = data.getValue(rows[i], 1);
-    var prio = coln < 2 ? data.getValue(rows[i], 2) : 50;
+    var prio = coln < 2 ? 50 : data.getValue(rows[i], 2);
 
     buf += "<li>" + item(val, prio, name) + "</li>";
   }
