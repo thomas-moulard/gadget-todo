@@ -36,7 +36,10 @@
   list-style-type: none;
 }
 
-#viz .summary {
-  width: 4em;
-  float: left;
+#viz .hid {
+  display: none;
+}
+
+#viz .show{
+  display: auto;
 }

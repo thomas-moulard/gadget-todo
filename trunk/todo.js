@@ -203,19 +203,31 @@ function view(model) {
       continue;
     var p = document.createElement("p");
     root.appendChild(p);
+    var ul = document.createElement("ul");
+    ul.className = "hid";
     if (model.groupby) {
       var h3 = document.createElement("h3");
+      h3.className = "hid";
       h3.innerHTML = model.data[i].text;
 
       var div = document.createElement("div");
-      div.className = "summary";
-      model.data[i].text = "(" + model.data[i].val + "%) ";
+      div.className = "show";
+      model.data[i].text = "(" + model.data[i].val + "%) " + model.data[i].text;
       itemize(div, model.data[i]);
+
+      div.onclick =
+         function(h3_, div_, ul_) { return function() {
+           h3_.className = "show"; div_.className = "hid"; ul_.className = "show";
+         } } (h3, div, ul);
+
+      h3.onclick =
+         function(h3_, div_, ul_) { return function() {
+           h3_.className = "hid"; div_.className = "show"; ul_.className = "hid";
+         } } (h3, div, ul);
 
       p.appendChild(div);
       p.appendChild(h3);
     }
-    var ul = document.createElement("ul");
     p.appendChild(ul);
     for (var j = 0; j < model.data[i].elts.length; ++j) {
       var li = document.createElement("li");
