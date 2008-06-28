@@ -215,11 +215,11 @@ function view(model) {
     if (model.groupby) {
       var h3 = document.createElement("h3");
       h3.className = "hid";
-      h3.innerHTML = model.data[i].text;
+      h3.innerHTML = "▶ " + model.data[i].text;
 
       var div = document.createElement("div");
       div.className = "show";
-      model.data[i].text = "(" + model.data[i].val + "%) " + model.data[i].text;
+      model.data[i].text = "▼ (" + model.data[i].val + "%) " + model.data[i].text;
       itemize(div, model.data[i]);
 
       div.onclick =
