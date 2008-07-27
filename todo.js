@@ -195,8 +195,8 @@ function legend(obj) {
 
 function view(model) {
   var root = document.getElementById("viz");
-  for (var i = 0; i < root.childNodes.length; ++i)
-    root.removeChild(root.childNodes[i]);
+  while (root.childNodes.length != 0)
+    root.removeChild(root.childNodes[0]);
 
   var collapse = document.createElement("div");
   var expand = document.createElement("div");
