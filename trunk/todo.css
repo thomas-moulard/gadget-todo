@@ -41,7 +41,7 @@
 }
 
 #viz .show{
-  display: auto;
+  display: block;
   cursor:pointer;
 }
 
@@ -76,5 +76,5 @@
   display: none;
 }
 #viz .legend:hover + p {
-  display: auto;
+  display: block;
 }
