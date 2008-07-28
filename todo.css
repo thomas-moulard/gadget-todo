@@ -24,9 +24,10 @@
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   background-color: #ddd;
-  position: relative;
+  position: fixed;
   left: 10px;
   top: 10px;
+  width: 80%;
   z-index: 400;
 }
 
