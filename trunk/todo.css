@@ -42,6 +42,7 @@
 
 #viz .show{
   display: auto;
+  cursor:pointer;
 }
 
 #viz .exco {
