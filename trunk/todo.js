@@ -234,6 +234,7 @@ function set_exco(str, ex) {
 
 function view(model) {
   var root = document.getElementById("viz");
+  legend(root);
   while (root.childNodes.length != 0)
     root.removeChild(root.childNodes[0]);
 
