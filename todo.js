@@ -188,8 +188,14 @@ function legend(obj) {
   span.className = "legend";
   span.textContent = prefs.getMsg("legend");
 
+  var div = document.createElement("div");
+  div.className = "hid";
+
   var p = document.createElement("p");
-  p.className = "hid";
+  p.className = "legend";
+  var sp = document.createElement("span");
+  sp.textContent = prefs.getMsg("finish");
+  p.appendChild(sp);
   var table = document.createElement("table");
   table.className = "legend";
   var tr = document.createElement("tr");
@@ -201,7 +207,13 @@ function legend(obj) {
     td.style.backgroundColor = col(i * 20, 1);
   }
   p.appendChild(table);
+  div.appendChild(p);
 
+  var p = document.createElement("p");
+  p.className = "legend";
+  var sp = document.createElement("span");
+  sp.textContent = prefs.getMsg("priority");
+  p.appendChild(sp);
   var table = document.createElement("table");
   table.className = "legend";
   var tr = document.createElement("tr");
@@ -213,17 +225,18 @@ function legend(obj) {
     td.style.backgroundColor = col(i * 20, 6);
   }
   p.appendChild(table);
+  div.appendChild(p);
 
   obj.appendChild(span);
-  obj.appendChild(p);
+  obj.appendChild(div);
   span.onmouseover =
-    function(p_) { return function() {
-      p_.className = "show";
-    } } (p);
+    function(div_) { return function() {
+      div_.className = "show";
+    } } (div);
   span.onmouseout =
     function(p_) { return function() {
-      p_.className = "hid";
-    } } (p);
+      div_.className = "hid";
+    } } (div);
 }
 
 // Array used as a set ...
