@@ -184,8 +184,10 @@ function itemize(obj, elt) {
 
 
 function legend(obj) {
-  var p = document.createElement("p");
-  p.className = "legend";
+  var span = document.createElement("span");
+  span.className = "legend";
+  span.textContent = prefs.getMsg("legend");
+
   var table = document.createElement("table");
   var tr = document.createElement("tr");
   table.appendChild(tr);
@@ -195,7 +197,8 @@ function legend(obj) {
     td.textContent = (i * 20) + "%";
     td.style.backgroundColor = col(i * 20, 1);
   }
-  p.appendChild(table);
+  span.appendChild(table);
+
   var table = document.createElement("table");
   var tr = document.createElement("tr");
   table.appendChild(tr);
@@ -205,8 +208,9 @@ function legend(obj) {
     td.textContent = (i * 20) + "%";
     td.style.backgroundColor = col(i * 20, 6);
   }
-  p.appendChild(table);
-  obj.appendChild(p);
+  span.appendChild(table);
+
+  obj.appendChild(span);
 }
 
 // Array used as a set ...
