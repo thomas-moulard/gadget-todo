@@ -11,4 +11,8 @@
   <msg name="none">Aucun</msg>
   <msg name="10_sec">10 sec.</msg>
   <msg name="1_min">1 min.</msg>
+  <msg name="init_error">Erreur, nombre de colonne insuffisant ou incompatible
+  avec la méthode de tri choisie.</msg>
+  <msg name="collapse_all">Tout enrouler</msg>
+  <msg name="expand_all">Tout dérouler</msg>
 </messagebundle>

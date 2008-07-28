@@ -40,6 +40,7 @@ function handleQueryResponse(response) {
 //////////////// Beginning of crappy code /////////////////////////////////////
 
 function gadgetMain(data) {
+  var prefs = new gadgets.Prefs();
   var groupby = null;
   switch (prefs.getString("groupby")) {
     case "CN": groupby=[{column: 3}, {column: 0}]; bgroupby=true; break;
@@ -60,7 +61,7 @@ function gadgetMain(data) {
         groupby[1].column > coln - 1)
     {
       var span = document.createElement("span");
-      span.textContent = "Error, Number of column too low or incompatible with the Groupby option.";
+      span.textContent = prefs.getMsg("init_error");
       span.className ="gadgetSettingsError";
       document.getElementById('viz').appendChild(span);
       return;
@@ -194,6 +195,7 @@ function legend(obj) {
 
 
 function view(model) {
+  var prefs = new gadgets.Prefs();
   var root = document.getElementById("viz");
   while (root.childNodes.length != 0)
     root.removeChild(root.childNodes[0]);
@@ -202,8 +204,8 @@ function view(model) {
   collapse.className="exco";
   var expand = document.createElement("span");
   expand.className="exco";
-  collapse.textContent = "Collapse All";
-  expand.textContent = "Expand All";
+  collapse.textContent = prefs.getMsg("collapse_all");
+  expand.textContent = prefs.getMsg("expand_all");
   root.appendChild(collapse);
   root.appendChild(expand);
 
