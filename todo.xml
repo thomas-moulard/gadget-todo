@@ -25,8 +25,10 @@
     <EnumValue value="CN" display_value="__MSG_category_name__"/>
     <EnumValue value="CV" display_value="__MSG_category_value__"/>
     <EnumValue value="CP" display_value="__MSG_category_priority__"/>
+    <!-- Does not work
     <EnumValue value="V" display_value="__MSG_value__"/>
     <EnumValue value="P" display_value="__MSG_priority__"/>
+    -->
   </UserPref>
   <UserPref name="_table_query_refresh_interval"
             datatype="enum" default_value="10" display_name="__MSG_refresh_interval__"
