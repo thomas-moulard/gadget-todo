@@ -3,12 +3,25 @@
 
 = Introduction =
 
-Add your content here.
+This gadget allows you to integrate a TODO list to your spreadsheet or to
+you customized Google home page.
 
 
-= Details =
+= How to add the gadget? =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+[http://www.google.com/ig/directory?url=gadget-todo.googlecode.com/svn/trunk/todo.xml Click here to add your gadget to your Google home page.]
+
+
+= How to use it? =
+
+First, you have to create a spreadsheet that will contain information about your
+TODO list. You will have to four columns:
+ * *Activity*: this column contains the title of each item.
+ * *Finish*: the current state (in percent) of each item.
+ * *Priority*: the priority (in percent) of each item.
+ * *Category*: to which group belongs each item.
+
+After doing that, add an item per row and fill the table.
+
+You can then add the widget to your spreadsheet or to your homepage.
+The gadget will be automatically updated when the table is changed.
