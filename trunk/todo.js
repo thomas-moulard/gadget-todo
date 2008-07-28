@@ -205,8 +205,8 @@ function itemize(obj, elt) {
     bar.attachEvent('onmouseout', container.onmouseout);
   }
   tip.textContent = textcopy;
-  obj.appendChild(tip);
   obj.appendChild(container);
+  obj.appendChild(tip);
 }
 
 
