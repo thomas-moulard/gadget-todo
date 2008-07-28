@@ -195,7 +195,7 @@ function legend(obj) {
     td.textContent = (i * 20) + "%";
     td.style.backgroundColor = col(i * 20, 1);
   }
-
+  p.appendChild(table);
   obj.appendChild(p);
 }
 
@@ -235,6 +235,7 @@ function set_exco(str, ex) {
 function view(model) {
   var root = document.getElementById("viz");
   legend(root);
+
   while (root.childNodes.length != 0)
     root.removeChild(root.childNodes[0]);
 
