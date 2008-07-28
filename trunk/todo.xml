@@ -35,6 +35,7 @@
     <EnumValue value="10" display_value="__MSG_10_sec__" />
     <EnumValue value="60" display_value="__MSG_1_min__" />
   </UserPref>
+  <UserPref name="exco_states" default_value="" datatype="hidden" />
 
   <Content type="html">
     <![CDATA[
