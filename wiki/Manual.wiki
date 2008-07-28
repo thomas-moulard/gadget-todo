@@ -1,4 +1,4 @@
-#summary User manual for the todo gadget.
+#summary User manual for the TODO gadget.
 #labels Phase-Deploy,Phase-Support
 
 = Introduction =
@@ -16,7 +16,7 @@ http://gadget-todo.googlecode.com/svn/trunk/screenshot.png
 == iGoogle ==
 [http://www.google.com/ig/directory?url=gadget-todo.googlecode.com/svn/trunk/todo.xml Click here to add your gadget to your Google home page.]
 
-== !SpreadSheet ==
+== !Spreadsheet ==
 Go to Insert > Gadget > Custom.
 Add http://gadget-todo.googlecode.com/svn/trunk/todo.xml in the textbox and click Add.
 
@@ -59,11 +59,11 @@ Don't forget to update the "range" in the gadget properties to take the new data
 
  * [http://gadget-todo.googlecode.com/svn/trunk/locale/ALL_ALL.xml Download the template used for localization.]
  * Rename it into "language_COUNTRY.xml" and translate the messages.
- * Save the file (the charset has to be *UTF-8*).
+ * Save the file (the character set has to be *UTF-8*).
  * Send it back to us! We will make the new language available as soon as possible.
 
 For more information about the internationalization, [http://code.google.com/apis/gadgets/docs/i18n.html consult the developer documentation].
 
 = Example =
- * A spreadsheet using the plugin [http://spreadsheets.google.com/ccc?key=pU88flXXTB8Uf6w05MMWFXQ&hl=en]
+ * A spreadsheet using the plug-in [http://spreadsheets.google.com/ccc?key=pU88flXXTB8Uf6w05MMWFXQ&hl=en]
  * Data source URL you can use : [http://spreadsheets.google.com/tq?range=B2:E26&key=pU88flXXTB8Uf6w05MMWFXQ&gid=0]
