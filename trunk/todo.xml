@@ -9,6 +9,7 @@
                scrolling="true">
     <Require feature="idi"/>
     <Require feature="settitle"/>
+    <Require feature="setprefs"/>
 
     <Locale messages="http://gadget-todo.googlecode.com/svn/trunk/locale/ALL_ALL.xml"/>
     <Locale lang="de" messages="http://gadget-todo.googlecode.com/svn/trunk/locale/de_ALL.xml"/>
