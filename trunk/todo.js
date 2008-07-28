@@ -234,7 +234,7 @@ function legend(obj) {
       div_.className = "show";
     } } (div);
   span.onmouseout =
-    function(p_) { return function() {
+    function(div_) { return function() {
       div_.className = "hid";
     } } (div);
 }
