@@ -69,7 +69,7 @@
   cursor:pointer;
 }
 
-#viz span.legend {
+#viz span.caption {
   border: 1px solid #aaa;
   margin: 10px 0 0 10px;
   padding: 3px;
@@ -79,21 +79,21 @@
   cursor:pointer;
 }
 
-#viz span.legend + div {
+#viz span.caption + div {
   position: absolute;
   left: 10px;
   top: 10px;
   z-index: 400;
 }
 
-#viz table.legend {
+#viz table.caption {
   border: 1px black;
   margin: 0;
   padding: 0;
   size: 0.8em;
 }
 
-#viz p.legend {
+#viz p.caption {
   border: 1px solid #aaa;
   margin: 0px;
   padding: 2px;
@@ -102,6 +102,6 @@
   background-color: #eee;
 }
 
-#viz p.legend {
+#viz p.caption {
   font-weight: bold;
 }

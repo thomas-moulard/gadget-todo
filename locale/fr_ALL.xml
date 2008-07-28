@@ -15,7 +15,7 @@
   avec la méthode de tri choisie.</msg>
   <msg name="collapse_all">Tout enrouler</msg>
   <msg name="expand_all">Tout dérouler</msg>
-  <msg name="legend">Légende</msg>
+  <msg name="caption">Légende</msg>
   <msg name="priority">Priorité</msg>
   <msg name="finish">Fini</msg>
 </messagebundle>
