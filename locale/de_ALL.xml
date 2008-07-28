@@ -11,4 +11,8 @@
   <msg name="none">None</msg>
   <msg name="10_sec">10 sec.</msg>
   <msg name="1_min">1 min.</msg>
+  <msg name="init_error">Error, Number of column too low or incompatible with
+  the Group-by option.</msg>
+  <msg name="collapse_all">Collapse all</msg>
+  <msg name="expand_all">Expand all</msg>
 </messagebundle>
