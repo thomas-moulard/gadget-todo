@@ -226,7 +226,6 @@ function set_exco(str, ex) {
 }
 
 function view(model) {
-  var prefs = new gadgets.Prefs();
   var root = document.getElementById("viz");
   while (root.childNodes.length != 0)
     root.removeChild(root.childNodes[0]);
