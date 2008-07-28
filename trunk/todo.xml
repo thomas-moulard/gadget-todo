@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
   <ModulePrefs title="Todo List"
-               author="Samuel Charron"
-               author_email="scharron@google.com"
+               author="Samuel Charron and Thomas Moulard"
+               author_email="chammm+todo-gadget@gmail.com"
                description="Visualize a Todo list"
                thumbnail="http://gadget-todo.googlecode.com/svn/trunk/thumbnail.png"
                screenshot="http://gadget-todo.googlecode.com/svn/trunk/screenshot.png"
