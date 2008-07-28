@@ -17,6 +17,19 @@
   overflow: hidden;
 }
 
+#viz .barcontainer + div{
+  border: 1px solid #aaa;
+  margin: 0px;
+  padding: 2px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  background-color: #ddd;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 400;
+}
+
 #viz .bar {
   position: absolute;
   left: 0;
