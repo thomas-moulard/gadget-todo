@@ -155,7 +155,7 @@ function itemize(obj, elt) {
 
   var bgcolor = col(val, 1);
   var color = col(prio, 6);
-  var textcopy = text;
+  var alt = elt.alt;
   text = text.replace(/ /g, "&nbsp;"); // For nice black/grey text.
   text = "&nbsp;" + text;
 
@@ -204,7 +204,7 @@ function itemize(obj, elt) {
     tip.attachEvent('onmouseout', container.onmouseout);
     bar.attachEvent('onmouseout', container.onmouseout);
   }
-  tip.textContent = textcopy;
+  tip.textContent = alt;
   obj.appendChild(container);
   obj.appendChild(tip);
 }
@@ -350,6 +350,7 @@ function view(model) {
       else
 	div.className = "show";
       model.data[i].text = "&#9660; (" + model.data[i].val + "%) " + model.data[i].text;
+      model.data[i].alt = model.data[i].text;
       itemize(div, model.data[i]);
 
       div.onclick =
@@ -380,6 +381,7 @@ function view(model) {
       var li = document.createElement("li");
       ul.appendChild(li);
       model.data[i].elts[j].text = "(" + model.data[i].elts[j].val + "%) " + model.data[i].elts[j].text;
+      model.data[i].elts[j].alt = model.data[i].elts[j].text;
       itemize(li, model.data[i].elts[j]);
     }
   }
