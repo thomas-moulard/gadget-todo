@@ -189,11 +189,21 @@ function legend(obj) {
   var table = document.createElement("table");
   var tr = document.createElement("tr");
   table.appendChild(tr);
-  for (var i = 0; i < 5; ++i) {
+  for (var i = 0; i <= 5; ++i) {
     var td = document.createElement("td");
     tr.appendChild(td);
     td.textContent = (i * 20) + "%";
     td.style.backgroundColor = col(i * 20, 1);
+  }
+  p.appendChild(table);
+  var table = document.createElement("table");
+  var tr = document.createElement("tr");
+  table.appendChild(tr);
+  for (var i = 0; i <= 5; ++i) {
+    var td = document.createElement("td");
+    tr.appendChild(td);
+    td.textContent = (i * 20) + "%";
+    td.style.backgroundColor = col(i * 20, 6);
   }
   p.appendChild(table);
   obj.appendChild(p);
