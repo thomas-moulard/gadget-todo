@@ -257,14 +257,14 @@ function view(model) {
 	h3.className = "show";
       else
 	h3.className = "hid";
-      h3.innerHTML = "▶ " + model.data[i].text;
+      h3.innerHTML = "&#9654; " + model.data[i].text;
 
       var div = document.createElement("div");
       if (is_ex(str))
 	div.className = "hid";
       else
 	div.className = "show";
-      model.data[i].text = "▼ (" + model.data[i].val + "%) " + model.data[i].text;
+      model.data[i].text = "&#9660; (" + model.data[i].val + "%) " + model.data[i].text;
       itemize(div, model.data[i]);
 
       div.onclick =
