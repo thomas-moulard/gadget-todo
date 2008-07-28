@@ -349,8 +349,8 @@ function view(model) {
 	div.className = "hid";
       else
 	div.className = "show";
-      model.data[i].text = "&#9660; (" + model.data[i].val + "%) " + model.data[i].text;
       model.data[i].alt = model.data[i].text;
+      model.data[i].text = "&#9660; (" + model.data[i].val + "%) " + model.data[i].text;
       itemize(div, model.data[i]);
 
       div.onclick =
@@ -380,8 +380,8 @@ function view(model) {
     for (var j = 0; j < model.data[i].elts.length; ++j) {
       var li = document.createElement("li");
       ul.appendChild(li);
-      model.data[i].elts[j].text = "(" + model.data[i].elts[j].val + "%) " + model.data[i].elts[j].text;
       model.data[i].elts[j].alt = model.data[i].elts[j].text;
+      model.data[i].elts[j].text = "(" + model.data[i].elts[j].val + "%) " + model.data[i].elts[j].text;
       itemize(li, model.data[i].elts[j]);
     }
   }
