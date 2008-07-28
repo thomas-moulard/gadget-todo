@@ -20,8 +20,9 @@ http://gadget-todo.googlecode.com/svn/trunk/screenshot.png
 Go to Insert > Gadget > Custom.
 Add http://gadget-todo.googlecode.com/svn/trunk/todo.xml in the textbox and click Add.
 
-= How to use it? =
 
+= How to use it? =
+== General instruction ==
 First, you have to create a spreadsheet that will contain information about your
 TODO list. You will have to four columns:
  * *Activity*: this column contains the title of each item.
@@ -35,9 +36,10 @@ You can then add the widget to your spreadsheet or to your homepage.
 The gadget will be automatically updated when the table is changed.
 
 == iGoogle ==
-You must indicate the data source url for iGoogle.
+You must indicate the data source URL for iGoogle.
 On the spreadsheet that contains the data, add the gadget.
-Once the gadget displays the data you want, click on the top right arrow > Get query data source url. Copy the url in the iGoogle field.
+Once the gadget displays the data you want, click on the top right arrow > Get query data source URL. Copy the URL in the iGoogle field.
+
 
 = How to use the associated form? =
 
