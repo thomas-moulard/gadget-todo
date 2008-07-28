@@ -45,6 +45,10 @@
 }
 
 #viz .exco {
-  border: 1px solid #DDD;
+  border: 1px solid #aaa;
   margin: 0 10px 0 10px;
+  padding: 0.1em 0.1em 1em 1em;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  background-color: #ddd;
 }
