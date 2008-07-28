@@ -6,6 +6,8 @@
 This gadget allows you to integrate a TODO list to your spreadsheet or to
 you customized Google home page.
 
+http://gadget-todo.googlecode.com/svn/trunk/screenshot.png
+
 
 = How to add the gadget? =
 
