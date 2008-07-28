@@ -155,12 +155,14 @@ function itemize(obj, elt) {
 
   var bgcolor = col(val, 1);
   var color = col(prio, 6);
+  var textcopy = text;
   text = text.replace(/ /g, "&nbsp;"); // For nice black/grey text.
   text = "&nbsp;" + text;
 
   var container = document.createElement("div");
   container.className = "barcontainer";
   container.style.backgroundColor = color;
+  container.alt = textcopy;
 
   var hack = document.createElement("div");
   hack.className = "barhack";
