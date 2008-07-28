@@ -16,7 +16,7 @@ http://gadget-todo.googlecode.com/svn/trunk/screenshot.png
 == iGoogle ==
 [http://www.google.com/ig/directory?url=gadget-todo.googlecode.com/svn/trunk/todo.xml Click here to add your gadget to your Google home page.]
 
-== SpreadSheet ==
+== !SpreadSheet ==
 Go to Insert > Gadget > Custom.
 Add http://gadget-todo.googlecode.com/svn/trunk/todo.xml in the textbox and click Add.
 
