@@ -198,8 +198,10 @@ function view(model) {
   while (root.childNodes.length != 0)
     root.removeChild(root.childNodes[0]);
 
-  var collapse = document.createElement("div");
-  var expand = document.createElement("div");
+  var collapse = document.createElement("span");
+  collapse.className="exco";
+  var expand = document.createElement("span");
+  expand.className="exco";
   collapse.textContent = "Collapse All";
   expand.textContent = "Expand All";
   root.appendChild(collapse);
