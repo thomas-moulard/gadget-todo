@@ -65,9 +65,18 @@
   cursor:pointer;
 }
 
+#viz span.legend + div {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
 #viz table.legend {
   border: 1px black;
   margin: 0;
   padding: 0;
   size: 0.8em;
+}
+
+#viz p.legend {
 }
