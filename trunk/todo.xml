@@ -4,8 +4,8 @@
                author="Samuel Charron"
                author_email="scharron@google.com"
                description="Visualize a Todo list"
-               thumbnail=""
-               screenshot=""
+               thumbnail="http://gadget-todo.googlecode.com/svn/trunk/thumbnail.png"
+               screenshot="http://gadget-todo.googlecode.com/svn/trunk/screenshot.png"
                scrolling="true">
     <Require feature="idi"/>
     <Require feature="settitle"/>
