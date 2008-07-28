@@ -242,12 +242,16 @@ function view(model) {
   for (var i = 0; i < model.data.length; ++i) {
     if (model.data[i].elts.length == 0)
       continue;
+    var str = model.data[i].text;
     var p = document.createElement("p");
     root.appendChild(p);
     var ul = document.createElement("ul");
+    if (is_ex(str))
+      ul.className = "show";
+    else
+      ul.className = "hid";
     ul.className = "hid";
     if (model.groupby) {
-      var str = model.data[i].text;
       var h3 = document.createElement("h3");
       if (is_ex(str))
 	h3.className = "show";
