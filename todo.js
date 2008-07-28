@@ -195,7 +195,7 @@ function legend(obj) {
 
 // Array used as a set ...
 function is_ex(str) {
-  var states = pref.getArray("exco_states");
+  var states = prefs.getArray("exco_states");
   for (var i = 0; i < states.length; ++i)
     if (states[i] == str)
       return true;
@@ -203,7 +203,7 @@ function is_ex(str) {
 }
 
 function set_exco(str, ex) {
-  var states = pref.getArray("exco_states");
+  var states = prefs.getArray("exco_states");
   var free = -1;
   for (var i = 0; i < states.length; ++i) {
     if (states[i] == "" && free == -1)
@@ -214,7 +214,7 @@ function set_exco(str, ex) {
       if (!ex)
 	states[i] = "";
       // Sync
-      pref.setArray("exco_states", states);
+      prefs.setArray("exco_states", states);
       return;
     }
   }
@@ -223,7 +223,7 @@ function set_exco(str, ex) {
     states.push(str);
   else
     states[free] = str;
-  pref.setArray("exco_states", states);
+  prefs.setArray("exco_states", states);
 }
 
 function view(model) {
