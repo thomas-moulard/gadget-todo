@@ -1,36 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
-<ModulePrefs title="Todo List"
-author="Samuel Charron"
-author_email="scharron@google.com"
-description="Visualize a Todo list"
-thumbnail=""
-screenshot=""
-scrolling="true">
-<Require feature="idi"/>
-<Require feature="settitle"/>
-</ModulePrefs>
-<UserPref name="_table_query_url" display_name="Data source URL" required="true"/>
-<UserPref name="title" display_name="Todo List Title (optional)" required="false"/>
-<UserPref name="groupby" default_value="CN" display_name="Group / Sort by" datatype="enum">
-<EnumValue value="CN" display_value="Category/Name" />
-<EnumValue value="CV" display_value="Category/Value"/>
-<EnumValue value="CP" display_value="Category/Priority"/>
-<EnumValue value="V" display_value="Value"/>
-<EnumValue value="P" display_value="Priority"/>
-</UserPref>
-<UserPref name="_table_query_refresh_interval" datatype="enum" default_value="10" display_name="Refresh Interval" required="true" >
-<EnumValue value="0" display_value="None" />
-<EnumValue value="10" display_value="10 sec." />
-<EnumValue value="60" display_value="1 min." />
-</UserPref>
+  <ModulePrefs title="Todo List"
+               author="Samuel Charron"
+               author_email="scharron@google.com"
+               description="Visualize a Todo list"
+               thumbnail=""
+               screenshot=""
+               scrolling="true">
+    <Require feature="idi"/>
+    <Require feature="settitle"/>
 
-<Content type="html">
-<![CDATA[
-<link rel="stylesheet" type="text/css" href="http://gadget-todo.googlecode.com/svn/trunk/todo.css" />
+    <Locale messages="http://gadget-todo.googlecode.com/svn/trunk/locale/ALL_ALL.xml"/>
+    <Locale lang="de" messages="http://gadget-todo.googlecode.com/svn/trunk/locale/de_ALL.xml"/>
+    <Locale lang="fr" messages="http://gadget-todo.googlecode.com/svn/trunk/locale/fr_ALL.xml"/>
+  </ModulePrefs>
+  <UserPref name="_table_query_url"
+            display_name="__MSG_data_source_url__" required="true"/>
+  <UserPref name="title"
+            display_name="__MSG_todo_list_title__" required="false"/>
+  <UserPref name="groupby" default_value="CN"
+            display_name="__MSG_group_sort_by__" datatype="enum">
+    <EnumValue value="CN" display_value="__MSG_category_name__"/>
+    <EnumValue value="CV" display_value="__MSG_category_value__"/>
+    <EnumValue value="CP" display_value="__MSG_category_priority__"/>
+    <EnumValue value="V" display_value="__MSG_value__"/>
+    <EnumValue value="P" display_value="__MSG_priority__"/>
+  </UserPref>
+  <UserPref name="_table_query_refresh_interval"
+            datatype="enum" default_value="10" display_name="__MSG_refresh_interval__"
+            required="true">
+    <EnumValue value="0" display_value="__MSG_none__" />
+    <EnumValue value="10" display_value="__MSG_10_sec__" />
+    <EnumValue value="60" display_value="__MSG_1_min__" />
+  </UserPref>
+
+  <Content type="html">
+    <![CDATA[
+<link rel="stylesheet" type="text/css"
+      href="http://gadget-todo.googlecode.com/svn/trunk/todo.css" />
 <div id="viz"><img src="http://www.google.com/ig/images/spinner.gif" /></div>
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-<script type="text/javascript" src="http://gadget-todo.googlecode.com/svn/trunk/todo.js"></script>
+<script type="text/javascript"
+        src="http://gadget-todo.googlecode.com/svn/trunk/todo.js"></script>
 ]]>
-</Content>
+  </Content>
 </Module>
