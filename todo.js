@@ -257,7 +257,6 @@ function view(model) {
       ul.className = "show";
     else
       ul.className = "hid";
-    ul.className = "hid";
     if (model.groupby) {
       var h3 = document.createElement("h3");
       if (is_ex(str))
