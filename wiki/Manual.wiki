@@ -48,9 +48,11 @@ item can be sent by e-mail or the form can be displayed on a website.
 
 First, click on the "Form" tab. Then, click on "share the form" and choose one
 of the two options. The form can either be sent by e-mail or a piece of html can
-be copied/paster on any website to integrate the form. The "other actions" button
+be copied/pasted on any website to integrate the form. The "other actions" button
 allow you to stop accepting answers to the form, to access to it directly through
 a link or to modify the form.
+
+Don't forget to update the "range" in the gadget properties to take the new data into account.
 
 
 = How to translate the gadget in your language? =
