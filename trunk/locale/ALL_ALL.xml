@@ -15,4 +15,7 @@
   the Group-by option.</msg>
   <msg name="collapse_all">Collapse all</msg>
   <msg name="expand_all">Expand all</msg>
+  <msg name="legend">Legend</msg>
+  <msg name="priority">Priority</msg>
+  <msg name="finish">Finish</msg>
 </messagebundle>
