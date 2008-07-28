@@ -61,4 +61,8 @@
 
 #viz .legend table {
   float: right;
+  border: 1px black;
+  margin: 0;
+  padding: 0;
+  font-size: 0.8em;
 }
