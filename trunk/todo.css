@@ -73,7 +73,7 @@
   size: 0.8em;
 }
 
-#viz .legend:hover + p {
+#viz .legend + p {
   display: none;
 }
 #viz .legend:hover + p {
