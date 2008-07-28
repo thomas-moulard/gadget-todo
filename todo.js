@@ -193,6 +193,38 @@ function legend(obj) {
   obj.appendChild(p);
 }
 
+// Array used as a set ...
+function is_ex(str) {
+  var states = pref.getArray("exco_states");
+  for (int i = 0; i < states.length; ++i)
+    if (states[i] == str)
+      return true;
+  return false;
+}
+
+function set_exco(str, ex) {
+  var states = pref.getArray("exco_states");
+  var free = -1;
+  for (int i = 0; i < states.length; ++i) {
+    if (states[i] == "" && free == -1)
+      free = i;
+    if (states[i] == str) {
+      // Found the state.
+      // Change it or don't touch it
+      if (!ex)
+	states[i] = "";
+      // Sync
+      pref.setArray("exco_states", states);
+      return;
+    }
+  }
+  // Not found
+  if (free == -1)
+    states.push(str);
+  else
+    states[free] = str;
+  pref.setArray("exco_states", states);
+}
 
 function view(model) {
   var prefs = new gadgets.Prefs();
@@ -217,12 +249,19 @@ function view(model) {
     var ul = document.createElement("ul");
     ul.className = "hid";
     if (model.groupby) {
+      var str = model.data[i].text;
       var h3 = document.createElement("h3");
-      h3.className = "hid";
+      if (is_ex(str))
+	h3.className = "show";
+      else
+	h3.className = "hid";
       h3.innerHTML = "▶ " + model.data[i].text;
 
       var div = document.createElement("div");
-      div.className = "show";
+      if (is_ex(str))
+	div.className = "hid";
+      else
+	div.className = "show";
       model.data[i].text = "▼ (" + model.data[i].val + "%) " + model.data[i].text;
       itemize(div, model.data[i]);
 
