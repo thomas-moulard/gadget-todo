@@ -1,5 +1,5 @@
 <messagebundle>
-  <msg name="data_source_url">URLData Source URL</msg>
+  <msg name="data_source_url">URL des données sources</msg>
   <msg name="todo_list_title">Titre de la todoliste (optionnel)</msg>
   <msg name="group_sort_by">Grouper / Trier par</msg>
   <msg name="category_name">Catégorie/Nom</msg>
