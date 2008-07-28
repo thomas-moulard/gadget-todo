@@ -188,7 +188,9 @@ function legend(obj) {
   span.className = "legend";
   span.textContent = prefs.getMsg("legend");
 
+  var p = document.createElement("p");
   var table = document.createElement("table");
+  table.className = "legend";
   var tr = document.createElement("tr");
   table.appendChild(tr);
   for (var i = 0; i <= 5; ++i) {
@@ -197,9 +199,10 @@ function legend(obj) {
     td.textContent = (i * 20) + "%";
     td.style.backgroundColor = col(i * 20, 1);
   }
-  span.appendChild(table);
+  p.appendChild(table);
 
   var table = document.createElement("table");
+  table.className = "legend";
   var tr = document.createElement("tr");
   table.appendChild(tr);
   for (var i = 0; i <= 5; ++i) {
@@ -208,9 +211,10 @@ function legend(obj) {
     td.textContent = (i * 20) + "%";
     td.style.backgroundColor = col(i * 20, 6);
   }
-  span.appendChild(table);
+  p.appendChild(table);
 
   obj.appendChild(span);
+  obj.appendChild(p);
 }
 
 // Array used as a set ...
