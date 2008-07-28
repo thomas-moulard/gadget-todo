@@ -1,14 +1,14 @@
 <messagebundle>
   <msg name="data_source_url">Data Source URL</msg>
-  <msg name="todo_list_title">Todo List Title (optional)</msg>
-  <msg name="group_by">Group / Sort by</msg>
-  <msg name="category_name">Category/Name</msg>
-  <msg name="category_value">Category/Value</msg>
-  <msg name="category_priority">Category/Priority</msg>
-  <msg name="value">Value</msg>
-  <msg name="priority">Priority</msg>
-  <msg name="refresh_interval">Refresh Interval
-  <msg name="none">None</msg>
+  <msg name="todo_list_title">Titre de la todoliste (optionnel)</msg>
+  <msg name="group_by">Grouper / Trier par</msg>
+  <msg name="category_name">Catégorie/Nom</msg>
+  <msg name="category_value">Catégorie/Valeur</msg>
+  <msg name="category_priority">Catégorie/Priorité</msg>
+  <msg name="value">Valeur</msg>
+  <msg name="priority">Priorité</msg>
+  <msg name="refresh_interval">Intervalle entre les rafraîchissements</msg>
+  <msg name="none">Aucun</msg>
   <msg name="10_sec">10 sec.</msg>
   <msg name="1_min">1 min.</msg>
 </messagebundle>
