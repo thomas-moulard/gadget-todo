@@ -162,7 +162,6 @@ function itemize(obj, elt) {
   var container = document.createElement("div");
   container.className = "barcontainer";
   container.style.backgroundColor = color;
-  container.alt = textcopy;
 
   var hack = document.createElement("div");
   hack.className = "barhack";
@@ -180,6 +179,28 @@ function itemize(obj, elt) {
 
   container.appendChild(hack);
   hack.appendChild(bar);
+
+  var tip = document.createElement("div");
+  tip.className = "hid";
+  container.onmouseover =
+    function(tip_) { return function() {
+      tip_.className = "show";
+    } } (tip);
+  container.onmouseout =
+    function(tip_) { return function() {
+      tip_.className = "hid";
+    } } (tip);
+  if (tip.addEventListener){
+    tip.addEventListener('mouseover', container.onmouseover, false);
+  } else if (tip.attachEvent) {
+    tip.attachEvent('onmouseover', container.onmouseover);
+  }
+  if (tip.addEventListener){
+    tip.addEventListener('mouseout', container.onmouseout, false);
+  } else if (tip.attachEvent) {
+    tip.attachEvent('onmouseout', container.onmouseout);
+  }
+
 
   obj.appendChild(container);
 }
