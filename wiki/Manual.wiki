@@ -39,6 +39,17 @@ You must indicate the data source url for iGoogle.
 On the spreadsheet that contains the data, add the gadget.
 Once the gadget displays the data you want, click on the top right arrow > Get query data source url. Copy the url in the iGoogle field.
 
+= How to use the associated form? =
+
+The associated form allows item addition from outside. An invitation to add an
+item can be sent by e-mail or the form can be displayed on a website.
+
+First, click on the "Form" tab. Then, click on "share the form" and choose one
+of the two options. The form can either be sent by e-mail or a piece of html can
+be copied/paster on any website to integrate the form. The "other actions" button
+allow you to stop accepting answers to the form, to access to it directly through
+a link or to modify the form.
+
 
 = How to translate the gadget in your language? =
 
