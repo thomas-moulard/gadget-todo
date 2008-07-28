@@ -1,0 +1,18 @@
+<messagebundle>
+   <msg name="data_source_url">データソースのURL </msg>
+   <msg name="todo_list_title"> TODOリストタイトル（オプション）</msg>
+   <msg name="group_sort_by">グループ/並べ替え</msg>
+   <msg name="category_name">カテゴリ/名</msg>
+   <msg name="category_value">カテゴリ/値</msg>
+   <msg name="category_priority">カテゴリ/優先順位</msg>
+   <msg name="value">値</msg>
+   <msg name="priority">の優先順位</msg>
+   <msg name="refresh_interval">リフレッシュ間隔</msg>
+   <msg name="none">なし</msg>
+   <msg name="10_sec">10秒です。</msg>
+   <msg name="1_min">1分です。 </msg>
+   <msg name="init_error">エラーが発生、数の列と互換性が低すぎるか
+  同グループでは、オプションを選択します。</msg>
+   <msg name="collapse_all">すべて折りたたんで</msg>
+   <msg name="expand_all">すべて展開</msg>
+</messagebundle>
