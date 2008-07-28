@@ -65,7 +65,7 @@
   cursor:pointer;
 }
 
-#viz .legend table {
+#viz > .legend > table {
   float: right;
   border: 1px black;
   margin: 0;
@@ -74,6 +74,6 @@
   display: none;
 }
 
-#viz .legend :hover table {
+#viz > .legend:hover > table {
   display: auto;
 }
