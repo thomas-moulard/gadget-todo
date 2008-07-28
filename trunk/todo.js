@@ -192,13 +192,17 @@ function itemize(obj, elt) {
     } } (tip);
   if (tip.addEventListener){
     tip.addEventListener('mouseover', container.onmouseover, false);
+    bar.addEventListener('mouseover', container.onmouseover, false);
   } else if (tip.attachEvent) {
     tip.attachEvent('onmouseover', container.onmouseover);
+    bar.attachEvent('onmouseover', container.onmouseover);
   }
   if (tip.addEventListener){
     tip.addEventListener('mouseout', container.onmouseout, false);
+    bar.addEventListener('mouseout', container.onmouseout, false);
   } else if (tip.attachEvent) {
     tip.attachEvent('onmouseout', container.onmouseout);
+    bar.attachEvent('onmouseout', container.onmouseout);
   }
   container.appendChild(tip);
 
