@@ -14,6 +14,7 @@
     <Locale messages="http://gadget-todo.googlecode.com/svn/trunk/locale/ALL_ALL.xml"/>
     <Locale lang="de" messages="http://gadget-todo.googlecode.com/svn/trunk/locale/de_ALL.xml"/>
     <Locale lang="fr" messages="http://gadget-todo.googlecode.com/svn/trunk/locale/fr_ALL.xml"/>
+    <Locale lang="jp" messages="http://gadget-todo.googlecode.com/svn/trunk/locale/jp_ALL.xml"/>
   </ModulePrefs>
   <UserPref name="_table_query_url"
             display_name="__MSG_data_source_url__" required="true"/>
