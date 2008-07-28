@@ -237,6 +237,16 @@ function legend(obj) {
     function(div_) { return function() {
       div_.className = "hid";
     } } (div);
+  if (div.addEventListener){
+    div.addEventListener('mouseover', span.onmouseover, false);
+  } else if (div.attachEvent) {
+    div.attachEvent('onmouseover', span.onmouseover);
+  }
+  if (div.addEventListener){
+    div.addEventListener('mouseout', span.onmouseout, false);
+  } else if (div.attachEvent) {
+    div.attachEvent('onmouseout', span.onmouseout);
+  }
 }
 
 // Array used as a set ...
