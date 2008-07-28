@@ -80,4 +80,13 @@
 }
 
 #viz p.legend {
+  border: 1px solid #aaa;
+  margin: 0px;
+  padding: 2px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  background-color: #ddd;
+}
+
+#viz p.legend {
 }

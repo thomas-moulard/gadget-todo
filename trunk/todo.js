@@ -278,7 +278,6 @@ function view(model) {
   while (root.childNodes.length != 0)
     root.removeChild(root.childNodes[0]);
 
-  legend(root);
   var collapse = document.createElement("span");
   collapse.className="exco";
   var expand = document.createElement("span");
@@ -287,6 +286,7 @@ function view(model) {
   expand.textContent = prefs.getMsg("expand_all");
   root.appendChild(collapse);
   root.appendChild(expand);
+  legend(root);
 
   for (var i = 0; i < model.data.length; ++i) {
     if (model.data[i].elts.length == 0)
