@@ -181,6 +181,7 @@ function itemize(obj, elt) {
   hack.appendChild(bar);
 
   var tip = document.createElement("div");
+  tip.textContent = textcopy;
   tip.className = "hid";
   container.onmouseover =
     function(tip_) { return function() {
