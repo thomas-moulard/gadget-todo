@@ -200,6 +200,7 @@ function itemize(obj, elt) {
   } else if (tip.attachEvent) {
     tip.attachEvent('onmouseout', container.onmouseout);
   }
+  container.appendChild(tip);
 
 
   obj.appendChild(container);
