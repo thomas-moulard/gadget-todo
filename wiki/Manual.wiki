@@ -37,9 +37,9 @@ FIXME: how to find the data source url
 
 = How to translate the gadget in your language? =
 
-* [http://gadget-todo.googlecode.com/svn/trunk/locale/ALL_ALL.xml Download the template used for localization.]
-* Rename it into "language_COUNTRY.xml" and translate the messages.
-* Save the file (the charset has to be *UTF-8*).
-* Send it back to us!
+ * [http://gadget-todo.googlecode.com/svn/trunk/locale/ALL_ALL.xml Download the template used for localization.]
+ * Rename it into "language_COUNTRY.xml" and translate the messages.
+ * Save the file (the charset has to be *UTF-8*).
+ * Send it back to us!
 
 For more information about the internationalization, [http://code.google.com/apis/gadgets/docs/i18n.html consult the developer documentation].
