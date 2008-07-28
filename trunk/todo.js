@@ -264,9 +264,9 @@ function view(model) {
       itemize(div, model.data[i]);
 
       div.onclick =
-         function(h3_, div_, ul_) { return function() {
-           h3_.className = "show"; div_.className = "hid"; ul_.className = "show";
-         } } (h3, div, ul);
+         function(h3_, div_, ul_, str_) { return function() {
+           h3_.className = "show"; div_.className = "hid"; ul_.className = "show"; set_exco(str_, true);
+         } } (h3, div, ul, str);
       if (expand.addEventListener){
         expand.addEventListener('click', div.onclick, false);
       } else if (expand.attachEvent) {
@@ -274,9 +274,9 @@ function view(model) {
       }
 
       h3.onclick =
-         function(h3_, div_, ul_) { return function() {
-           h3_.className = "hid"; div_.className = "show"; ul_.className = "hid";
-         } } (h3, div, ul);
+         function(h3_, div_, ul_, str_) { return function() {
+           h3_.className = "hid"; div_.className = "show"; ul_.className = "hid"; set_exco(str_, false);
+         } } (h3, div, ul, str);
       if (collapse.addEventListener){
         collapse.addEventListener('click', h3.onclick, false);
       } else if (collapse.attachEvent) {
