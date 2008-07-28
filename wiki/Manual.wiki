@@ -5,6 +5,8 @@
 
 This gadget allows you to integrate a TODO list to your spreadsheet or to
 you customized Google home page.
+Items can be associated with a group and can have a priority.
+
 
 http://gadget-todo.googlecode.com/svn/trunk/screenshot.png
 
@@ -12,6 +14,8 @@ http://gadget-todo.googlecode.com/svn/trunk/screenshot.png
 = How to add the gadget? =
 
 [http://www.google.com/ig/directory?url=gadget-todo.googlecode.com/svn/trunk/todo.xml Click here to add your gadget to your Google home page.]
+
+FIXME: how to add on spreadsheet
 
 
 = How to use it? =
@@ -27,3 +31,5 @@ After doing that, add an item per row and fill the table.
 
 You can then add the widget to your spreadsheet or to your homepage.
 The gadget will be automatically updated when the table is changed.
+
+FIXME: how to find the data source url
