@@ -40,7 +40,6 @@ function handleQueryResponse(response) {
 //////////////// Beginning of crappy code /////////////////////////////////////
 
 function gadgetMain(data) {
-  var prefs = new gadgets.Prefs();
   var groupby = null;
   switch (prefs.getString("groupby")) {
     case "CN": groupby=[{column: 3}, {column: 0}]; bgroupby=true; break;
