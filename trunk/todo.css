@@ -56,7 +56,13 @@
 }
 
 #viz .legend {
-  float: right;
+  border: 1px solid #aaa;
+  margin: 10px 0 0 10px;
+  padding: 3px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  background-color: #ddd;
+  cursor:pointer;
 }
 
 #viz .legend table {
@@ -64,5 +70,10 @@
   border: 1px black;
   margin: 0;
   padding: 0;
-  font-size: 0.8em;
+  size: 0.8em;
+  display: none;
+}
+
+#viz .legend :hover table {
+  display: auto;
 }
