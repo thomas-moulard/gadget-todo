@@ -43,3 +43,7 @@
 #viz .show{
   display: auto;
 }
+
+.exco {
+  border: 1px solid #DDD;
+}
