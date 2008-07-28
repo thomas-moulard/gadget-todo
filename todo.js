@@ -39,6 +39,9 @@ function handleQueryResponse(response) {
 
 //////////////// Beginning of crappy code /////////////////////////////////////
 
+// To run the animation only once
+var first_time = true;
+
 function gadgetMain(data) {
   var groupby = null;
   switch (prefs.getString("groupby")) {
@@ -102,6 +105,7 @@ function gadgetMain(data) {
   }
 
   view(model);
+  first_time = false;
 }
 
 
@@ -167,7 +171,10 @@ function itemize(obj, elt) {
   bar.style.backgroundColor = bgcolor;
   bar.style.width = val + "%";
   bar.innerHTML = text;
-  window.setTimeout(update, 50, bar, 0, val);
+  if (first_time)
+    window.setTimeout(update, 50, bar, 0, val);
+  else
+    window.setTimeout(update, 50, bar, val, val);
 
   container.appendChild(hack);
   hack.appendChild(bar);
