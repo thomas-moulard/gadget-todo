@@ -210,21 +210,21 @@ function itemize(obj, elt) {
 }
 
 
-function legend(obj) {
+function caption(obj) {
   var span = document.createElement("span");
-  span.className = "legend";
-  span.textContent = prefs.getMsg("legend");
+  span.className = "caption";
+  span.textContent = prefs.getMsg("caption");
 
   var div = document.createElement("div");
   div.className = "hid";
 
   var p = document.createElement("p");
-  p.className = "legend";
+  p.className = "caption";
   var sp = document.createElement("span");
   sp.textContent = prefs.getMsg("finish");
   p.appendChild(sp);
   var table = document.createElement("table");
-  table.className = "legend";
+  table.className = "caption";
   var tr = document.createElement("tr");
   table.appendChild(tr);
   for (var i = 0; i <= 5; ++i) {
@@ -237,12 +237,12 @@ function legend(obj) {
   div.appendChild(p);
 
   var p = document.createElement("p");
-  p.className = "legend";
+  p.className = "caption";
   var sp = document.createElement("span");
   sp.textContent = prefs.getMsg("priority");
   p.appendChild(sp);
   var table = document.createElement("table");
-  table.className = "legend";
+  table.className = "caption";
   var tr = document.createElement("tr");
   table.appendChild(tr);
   for (var i = 0; i <= 5; ++i) {
@@ -323,7 +323,7 @@ function view(model) {
   expand.textContent = prefs.getMsg("expand_all");
   root.appendChild(collapse);
   root.appendChild(expand);
-  legend(root);
+  caption(root);
 
   for (var i = 0; i < model.data.length; ++i) {
     if (model.data[i].elts.length == 0)
