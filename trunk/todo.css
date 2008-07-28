@@ -54,3 +54,11 @@
   background-color: #ddd;
   cursor:pointer;
 }
+
+#viz .legend {
+  float: right;
+}
+
+#viz .legend table {
+  float: right;
+}
