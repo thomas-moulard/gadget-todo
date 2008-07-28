@@ -13,10 +13,12 @@ http://gadget-todo.googlecode.com/svn/trunk/screenshot.png
 
 = How to add the gadget? =
 
+== iGoogle ==
 [http://www.google.com/ig/directory?url=gadget-todo.googlecode.com/svn/trunk/todo.xml Click here to add your gadget to your Google home page.]
 
-FIXME: how to add on spreadsheet
-
+== SpreadSheet ==
+Go to Insert > Gadget > Custom.
+Add http://gadget-todo.googlecode.com/svn/trunk/todo.xml in the textbox and click Add.
 
 = How to use it? =
 
@@ -32,7 +34,10 @@ After doing that, add an item per row and fill the table.
 You can then add the widget to your spreadsheet or to your homepage.
 The gadget will be automatically updated when the table is changed.
 
-FIXME: how to find the data source url
+== iGoogle ==
+You must indicate the data source url for iGoogle.
+On the spreadsheet that contains the data, add the gadget.
+Once the gadget displays the data you want, click on the top right arrow > Get query data source url. Copy the url in the iGoogle field.
 
 
 = How to translate the gadget in your language? =
