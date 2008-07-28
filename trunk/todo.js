@@ -196,7 +196,7 @@ function legend(obj) {
 // Array used as a set ...
 function is_ex(str) {
   var states = pref.getArray("exco_states");
-  for (int i = 0; i < states.length; ++i)
+  for (var i = 0; i < states.length; ++i)
     if (states[i] == str)
       return true;
   return false;
@@ -205,7 +205,7 @@ function is_ex(str) {
 function set_exco(str, ex) {
   var states = pref.getArray("exco_states");
   var free = -1;
-  for (int i = 0; i < states.length; ++i) {
+  for (var i = 0; i < states.length; ++i) {
     if (states[i] == "" && free == -1)
       free = i;
     if (states[i] == str) {
