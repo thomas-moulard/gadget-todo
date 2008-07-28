@@ -189,6 +189,7 @@ function legend(obj) {
   span.textContent = prefs.getMsg("legend");
 
   var p = document.createElement("p");
+  p.className = "hid";
   var table = document.createElement("table");
   table.className = "legend";
   var tr = document.createElement("tr");
@@ -215,6 +216,14 @@ function legend(obj) {
 
   obj.appendChild(span);
   obj.appendChild(p);
+  span.onmouseover =
+    function(p_) { return function() {
+      p_.className = "show";
+    } } (p);
+  span.onmouseout =
+    function(p_) { return function() {
+      p_.className = "hid";
+    } } (p);
 }
 
 // Array used as a set ...
